@@ -4,11 +4,11 @@ Visual brand canon for Crash Override. This repo is the single source of truth f
 
 ## Contents
 
-- `tokens/` — CSS design tokens (colors, typography, spacing, semantic, shadcn, base)
-- `guidelines/` — HTML guideline pages (color, type, spacing, logos, icons, animation, imagery, theming)
-- `assets/logos/` — logo and icon files (PNG + SVG)
-- `assets/illustrations/` — illustration SVGs
-- `styles.css` — root CSS entry point that imports all tokens
+- `tokens/`: CSS design tokens (colors, typography, spacing, semantic, shadcn, base)
+- `guidelines/`: HTML guideline pages (color, type, spacing, logos, icons, animation, imagery, theming)
+- `assets/logos/`: logo and icon files (PNG + SVG)
+- `assets/illustrations/`: illustration SVGs
+- `styles.css`: root CSS entry point that imports all tokens
 
 ## Provenance
 
