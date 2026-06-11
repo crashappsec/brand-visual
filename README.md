@@ -9,6 +9,12 @@ Visual brand canon for Crash Override. This repo is the single source of truth f
 - `assets/logos/`: logo and icon files (PNG + SVG)
 - `assets/illustrations/`: illustration SVGs
 - `styles.css`: root CSS entry point that imports all tokens
+- `fonts/`: vendored OFL font files (JetBrains Mono, Inter, Geist Mono), self-hosted and installable
+- `themes/`: governed variant layer (corp mapping today; platform and open-source onboard later)
+- `claude-plugin/`: the co-design skill with generated token references for agent tools
+- `scripts/`: reference generator and CI guardrails (token integrity, brand contract, WCAG contrast)
+
+Convention note: authored prose in this repo avoids em-dashes (brand rule). CSS comments inside copied canon files and generated tables that quote them are exempt.
 
 ## Provenance
 

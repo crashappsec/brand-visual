@@ -54,7 +54,7 @@ new values.
    - `themes/README.md`: marketing is a required reviewer.
 
 4. **CI brand-contract check.**
-   A script (landing in a later task) runs on every PR touching `themes/`.
+   `scripts/check-brand-contract.mjs` runs on every PR via `.github/workflows/validate.yml`.
    It greps `theme.css` files for raw colour literals and fails the build if
    any are found. Every referenced custom property must resolve to a token
    defined in `tokens/*.css`.
@@ -98,7 +98,7 @@ teams when needed. No placeholder directories exist until a team opens a PR.
      themes/<your-theme>/theme.css
 
    # Every var() reference resolves to a token in tokens/
-   node scripts/brand-contract-check.mjs themes/<your-theme>/theme.css
+   node scripts/check-brand-contract.mjs   # scans themes/ and decks/ itself, no argument
    ```
 
 5. Open a PR. Marketing is added automatically by CODEOWNERS.
