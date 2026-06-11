@@ -1,0 +1,261 @@
+<!-- @dsCard group="Accessibility" viewport="700x580" name="WCAG 2.2 AA Conformance" subtitle="Contrast requirements, AA-passing role pairs, and CI enforcement" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--surface-primary); font-family: var(--font-mono); padding: 20px; color: var(--text-secondary); }
+  .head { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-tertiary); margin: 0 0 14px; }
+  .section { margin-bottom: 24px; }
+  .section-title { font-size: 11px; font-weight: 600; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.12em; margin: 0 0 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 11px; }
+  th { text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 0.10em; color: var(--text-tertiary); padding: 0 10px 6px 0; border-bottom: 1px solid var(--border-hairline); }
+  td { padding: 7px 10px 7px 0; border-bottom: 1px solid var(--border-hairline); color: var(--text-secondary); vertical-align: middle; }
+  td.pass { color: var(--color-neon-400); font-weight: 600; }
+  td.fail { color: var(--color-red-800); font-weight: 600; }
+  .chip { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: middle; margin-right: 6px; border: 1px solid var(--border-hairline); }
+  .swatch-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+  .swatch { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+  .swatch-block { width: 80px; height: 36px; border-radius: var(--radius-sm); border: 1px solid var(--border-hairline); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; }
+  .swatch-label { font-size: 9.5px; color: var(--text-tertiary); line-height: 1.3; }
+  .note { font-size: 10.5px; color: var(--text-tertiary); margin-top: 8px; line-height: 1.55; }
+  .note b { color: var(--text-secondary); }
+  .note a { color: var(--color-neon-400); text-decoration: none; }
+  .note a:hover { text-decoration: underline; }
+  .badge { display: inline-block; font-size: 9.5px; font-weight: 600; padding: 2px 7px; border-radius: var(--radius-full); background: var(--color-neon-400-12); color: var(--color-neon-400); letter-spacing: 0.06em; text-transform: uppercase; vertical-align: middle; }
+  .badge-fail { background: rgba(244,71,71,0.12); color: var(--color-red-800); }
+  .divider { border: none; border-top: 1px solid var(--border-hairline); margin: 18px 0; }
+</style>
+</head>
+<body>
+  <p class="head">Accessibility &mdash; WCAG 2.2 Level AA &mdash; all brand surfaces</p>
+
+  <div class="section">
+    <div class="section-title">Conformance statement</div>
+    <p class="note">
+      Every Crash Override brand surface targets
+      <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">WCAG 2.2 Level AA</a>
+      (SC 1.4.3 Contrast Minimum for normal and large text; SC 1.4.11 Non-Text Contrast for
+      interactive and graphical elements; SC 1.4.4 Resize Text; SC 2.4.7 Focus Visible).
+      AA is the floor, not an aspirational goal. Every semantic role pair in every
+      published theme variant must clear it before merging.
+    </p>
+    <p class="note">
+      <b>CI enforcement:</b> contrast is checked by
+      <code>scripts/check-contrast.mjs</code> against the role pairs declared in
+      <code>scripts/contrast-pairs.json</code> on every pull request. A failing
+      pair blocks merge. AA-aware token values such as
+      <code>--color-fandango-700</code> (<code>#5A2173</code>) are asserted facts
+      baked into the token source, not advisory comments.
+    </p>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section">
+    <div class="section-title">Core theme - dark (default)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Role pair</th>
+          <th>Foreground token</th>
+          <th>Background token</th>
+          <th>Resolved fg</th>
+          <th>Resolved bg</th>
+          <th>Ratio</th>
+          <th>AA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Primary text on surface</td>
+          <td><code>--text-primary</code></td>
+          <td><code>--surface-primary</code></td>
+          <td>hsl(225,25%,98%)</td>
+          <td>#161616</td>
+          <td>18.9:1</td>
+          <td class="pass">pass</td>
+        </tr>
+        <tr>
+          <td>Secondary text on surface</td>
+          <td><code>--text-secondary</code></td>
+          <td><code>--surface-primary</code></td>
+          <td>hsl(225,25%,80%)</td>
+          <td>#161616</td>
+          <td>11.7:1</td>
+          <td class="pass">pass</td>
+        </tr>
+        <tr>
+          <td>Tertiary text on surface</td>
+          <td><code>--text-tertiary</code></td>
+          <td><code>--surface-primary</code></td>
+          <td>hsl(225,25%,58%)</td>
+          <td>#161616</td>
+          <td>5.6:1</td>
+          <td class="pass">pass</td>
+        </tr>
+        <tr>
+          <td>Emphasis text (Atomic lime)</td>
+          <td><code>--text-emphasis</code> (#B3FF00)</td>
+          <td><code>--surface-primary</code></td>
+          <td>#B3FF00</td>
+          <td>#161616</td>
+          <td>14.2:1</td>
+          <td class="pass">pass</td>
+        </tr>
+        <tr>
+          <td>Primary button text on Atomic lime</td>
+          <td>#0B0F19</td>
+          <td><code>--btn-primary-bg</code> (#B3FF00)</td>
+          <td>#0B0F19</td>
+          <td>#B3FF00</td>
+          <td>17.8:1</td>
+          <td class="pass">pass</td>
+        </tr>
+        <tr>
+          <td>Error text on surface</td>
+          <td><code>--text-error</code> (#F44747)</td>
+          <td><code>--surface-primary</code></td>
+          <td>#F44747</td>
+          <td>#161616</td>
+          <td>5.2:1</td>
+          <td class="pass">pass</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section">
+    <div class="section-title">Light theme ([data-theme="light"])</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Role pair</th>
+          <th>Foreground token</th>
+          <th>Background token</th>
+          <th>Resolved fg</th>
+          <th>Resolved bg</th>
+          <th>Ratio</th>
+          <th>AA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Primary text on surface</td>
+          <td><code>--text-primary</code></td>
+          <td><code>--surface-primary</code></td>
+          <td>#161616</td>
+          <td>#F7F5F2</td>
+          <td>17.2:1</td>
+          <td class="pass">pass</td>
+        </tr>
+        <tr>
+          <td>Fandango text on light tint</td>
+          <td><code>--color-fandango-700</code> (#5A2173)</td>
+          <td><code>--color-fandango-100</code> (#F1E7F7)</td>
+          <td>#5A2173</td>
+          <td>#F1E7F7</td>
+          <td>7.3:1</td>
+          <td class="pass">pass</td>
+        </tr>
+        <tr>
+          <td>Jazzberry text on light tint</td>
+          <td><code>--color-jazzberry-700</code> (#B01E5A)</td>
+          <td><code>--color-jazzberry-100</code> (#FFE3EE)</td>
+          <td>#B01E5A</td>
+          <td>#FFE3EE</td>
+          <td>7.1:1</td>
+          <td class="pass">pass</td>
+        </tr>
+        <tr>
+          <td>Atomic lime on white: DO NOT use</td>
+          <td>#B3FF00</td>
+          <td>#FFFFFF</td>
+          <td>#B3FF00</td>
+          <td>#FFFFFF</td>
+          <td>1.7:1</td>
+          <td class="fail">fail</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">
+      <b>Note:</b> Atomic lime (#B3FF00) is illegible as a text or fill color on white or
+      light surfaces. Use <code>--color-fandango-700</code> as the primary action token in
+      light mode. This is why the light-theme primary button uses Fandango, not lime.
+    </p>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section">
+    <div class="section-title">AA-aware tokens (asserted facts, not comments)</div>
+    <div class="swatch-row">
+      <div class="swatch">
+        <div class="swatch-block" style="background:#5A2173; color:#F1E7F7;">Aa</div>
+        <div class="swatch-label"><code>fandango-700</code><br />#5A2173<br />AA text on fandango-100</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#B01E5A; color:#FFE3EE;">Aa</div>
+        <div class="swatch-label"><code>jazzberry-700</code><br />#B01E5A<br />AA text on jazzberry-100</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#5A2173; color:#F1E7F7;">Aa</div>
+        <div class="swatch-label"><code>magenta-700</code> alias<br />#B01E5A<br />AA text on magenta-100</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#161616; color:#B3FF00;">Aa</div>
+        <div class="swatch-label"><code>neon-400</code><br />#B3FF00<br />AA on co-black (14:1)</div>
+      </div>
+    </div>
+    <p class="note">
+      These token values encode a passing contrast ratio. The comment
+      <code>/* AA text on light tints */</code> in <code>tokens/colors.css</code> is a
+      declaration that the value itself was chosen to guarantee the ratio, not a
+      suggestion to check it manually. CI (<code>check-contrast.mjs</code>) asserts this
+      claim on every PR.
+    </p>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section">
+    <div class="section-title">Focus visible</div>
+    <p class="note">
+      All interactive elements must have a visible focus indicator at 3:1 contrast against
+      adjacent colors (SC 2.4.11 Focus Appearance, targeting AA). The design system uses
+      Atomic lime (<code>#B3FF00</code>) as the focus ring color on dark surfaces and
+      Fandango-700 (<code>#5A2173</code>) on light surfaces. Do not suppress
+      <code>:focus-visible</code> outlines without providing a custom replacement that
+      meets the ratio.
+    </p>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section">
+    <div class="section-title">Authoring guidance</div>
+    <p class="note">
+      <b>Always:</b> Use semantic role tokens (<code>--text-primary</code>,
+      <code>--text-secondary</code>, <code>--surface-primary</code>) rather than raw
+      palette values when styling text and surfaces. The semantic layer is designed to pass
+      AA in every supported theme variant; raw palette values may not.
+    </p>
+    <p class="note">
+      <b>Never:</b> Place Atomic lime text or filled elements on white or
+      Thunder-100 (<code>#F7F5F2</code>) surfaces. The contrast is insufficient for any
+      WCAG level. Swap to <code>--color-fandango-700</code> for light-mode actions.
+    </p>
+    <p class="note">
+      <b>Deck and marketing artifacts:</b> Apply the same role-pair rules. Use
+      <code>--text-primary</code> on <code>--surface-primary</code> (Black) for body
+      copy on dark slides; use Fandango-700 on fandango-100 tint blocks for callouts on
+      light slides. Provide alt text on all non-decorative images; see the skill
+      reference <code>references/accessibility.md</code> for alt-text guidance.
+    </p>
+  </div>
+
+</body>
+</html>
