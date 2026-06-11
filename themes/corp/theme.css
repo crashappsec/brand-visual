@@ -1,0 +1,119 @@
+/* ============================================================
+   Crash Override -- Corp Theme
+   Layer: variant (top of the three-layer stack)
+
+   PURPOSE: This file restates the DEFAULT (dark, :root) semantic
+   mapping from tokens/semantic.css explicitly. It documents
+   "this is the corp look" so future variant authors have a
+   clear template to copy and remap.
+
+   HOW TO USE:
+     1. Copy this file to themes/<your-theme>/theme.css.
+     2. Remap only the roles relevant to your variant; inherit
+        the rest by NOT overriding them.
+     3. Assign roles to CORE token references only
+        (var(--color-*), var(--font-*), etc.).
+        Never introduce raw hex, rgb, hsl, or oklch literals here.
+     4. New values (new colours, new fonts) enter tokens/colors.css
+        or tokens/fonts.css first -- never here.
+     5. Propose your theme via PR; marketing is a required reviewer
+        on all themes (see CODEOWNERS).
+
+   THREE-LAYER MODEL:
+     tokens/colors.css + tokens/fonts.css  (core -- atomic values)
+     tokens/semantic.css                   (semantic roles -- context meaning)
+     themes/<name>/theme.css               (variant -- role remap for a brand context)
+
+   Corp theme restates the default mapping from tokens/semantic.css.
+   Variants copy this file and remap roles.
+   ============================================================ */
+
+/* ── Accent ───────────────────────────────────────────────────── */
+/*
+   The corp primary accent is Atomic lime. On all product and
+   marketing surfaces this is the go-to interactive, highlight,
+   and CTA colour. Variants may swap this for an approved core
+   colour (e.g. Fandango for a partner theme) but must not
+   introduce a new colour not already in tokens/colors.css.
+*/
+:root {
+  --accent: var(--color-atomic-lime);
+  --accent-hover: var(--color-neon-300);
+  --accent-active: var(--color-neon-600);
+
+  /* ── Surfaces ───────────────────────────────────────────────── */
+  --surface-primary: var(--color-dark-surface);
+  --surface-secondary: var(--color-dark-surface-secondary);
+  --surface-invert: var(--color-dark-surface-invert);
+  --surface-card: var(--color-dark-surface-secondary);
+  --surface-disabled: var(--color-grey-800);
+
+  /* Brand-tinted announcement / hero band surfaces */
+  --surface-brand1: var(--color-neon-400);       /* Atomic lime band */
+  --surface-brand2: var(--color-cobalt-500);      /* Fandango band */
+  --surface-magenta: var(--color-magenta-500);    /* Jazzberry band */
+
+  /* Status surfaces */
+  --surface-error: var(--color-red-200);
+  --surface-success: var(--color-neon-200);
+
+  /* ── Text hierarchy ─────────────────────────────────────────── */
+  --text-primary: var(--color-white);
+  --text-secondary: var(--color-grey-100);
+  --text-tertiary: var(--color-grey-300);
+  --text-emphasis: var(--color-neon-400);         /* links, highlighted copy */
+  --text-invert: var(--color-grey-100);
+  --text-disabled: var(--color-grey-600);
+  --text-placeholder: var(--color-grey-400);
+  --text-error: var(--color-red-800);
+
+  /* Capability label accents */
+  --text-label-accent: var(--color-magenta-500);  /* default eyebrow */
+  --text-label-cobalt: var(--color-cobalt-400);   /* Monitor */
+  --text-label-magenta: var(--color-magenta-500); /* Inspect */
+  --text-label-neon: var(--color-neon-400);       /* Track */
+  --text-label-amber: var(--color-neon-300);
+  --text-label-teal: var(--color-cobalt-400);
+  --text-label-green-terminal: var(--color-neon-400);
+  --text-label-yellow: var(--color-yellow-700);
+
+  /* ── Borders ────────────────────────────────────────────────── */
+  --border-default: var(--color-grey-700);
+  --border-strong: var(--color-grey-300);
+  --border-grey: var(--color-grey-600);
+  --border-hairline: var(--color-white-8);        /* rgba overlay token */
+  --border-negative: var(--color-red-800);
+  --border-warning: var(--color-yellow-700);
+  --border-positive: var(--color-neon-600);
+
+  /* ── Buttons ────────────────────────────────────────────────── */
+  /* Primary -- Atomic lime fill, Black label */
+  --btn-primary-bg: var(--color-neon-400);
+  --btn-primary-border: var(--color-neon-400);
+  --btn-primary-text: var(--color-co-black);
+
+  /* Secondary -- ghost with grey outline */
+  --btn-secondary-bg: transparent;
+  --btn-secondary-border: var(--color-grey-700);
+  --btn-secondary-text: var(--color-grey-100);
+  --btn-secondary-hover-bg: var(--color-dark-surface-invert);
+
+  /* States */
+  --btn-active-bg: var(--color-neon-600);
+  --btn-disabled-bg: var(--color-grey-800);
+  --btn-disabled-border: var(--color-grey-700);
+
+  /* Enterprise CTA -- Fandango fill, hero/CTA bands only */
+  --btn-enterprise-bg: var(--color-cobalt-500);
+  --btn-enterprise-border: var(--color-cobalt-500);
+  --btn-enterprise-text: var(--color-white);
+
+  /* ── Focus ──────────────────────────────────────────────────── */
+  --focus-ring: var(--color-neon-400);
+
+  /* ── Status indicators ──────────────────────────────────────── */
+  --status-error: var(--color-red-800);
+  --status-warning: var(--color-yellow-700);
+  --status-success: var(--color-neon-600);
+  --status-info: var(--color-cobalt-400);
+}
