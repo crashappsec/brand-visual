@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Crash Override Brand Guidelines</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--color-co-black);
+    color: var(--color-thunder);
+    font-family: var(--font-body);
+    padding: var(--spacing-12) var(--spacing-6);
+  }
+  .site-header {
+    max-width: 900px;
+    margin: 0 auto var(--spacing-12);
+    border-bottom: 1px solid var(--border-hairline);
+    padding-bottom: var(--spacing-6);
+  }
+  .site-header h1 {
+    font-family: var(--font-title);
+    font-size: var(--text-32);
+    font-weight: var(--weight-bold);
+    color: var(--color-atomic-lime);
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--spacing-2);
+    text-transform: uppercase;
+  }
+  .site-header p {
+    font-size: var(--text-14);
+    color: var(--text-tertiary);
+    margin: 0;
+  }
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .section {
+    margin-bottom: var(--spacing-12);
+  }
+  .section-title {
+    font-family: var(--font-title);
+    font-size: var(--text-12);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--text-tertiary);
+    margin: 0 0 var(--spacing-3);
+    padding-bottom: var(--spacing-1_5);
+    border-bottom: 1px solid var(--border-hairline);
+  }
+  .link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--spacing-3);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .link-grid a {
+    display: block;
+    padding: var(--spacing-3) var(--spacing-4);
+    background: var(--color-grey-900);
+    border: 1px solid var(--border-hairline);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: var(--text-14);
+    font-family: var(--font-mono);
+    transition: border-color 150ms ease, color 150ms ease;
+  }
+  .link-grid a:hover {
+    border-color: var(--color-atomic-lime);
+    color: var(--color-atomic-lime);
+  }
+  .link-grid a:focus-visible {
+    outline: 2px solid var(--color-atomic-lime);
+    outline-offset: 2px;
+  }
+  .site-footer {
+    max-width: 900px;
+    margin: var(--spacing-18) auto 0;
+    padding-top: var(--spacing-6);
+    border-top: 1px solid var(--border-hairline);
+    font-size: var(--text-12);
+    color: var(--text-tertiary);
+    font-family: var(--font-mono);
+  }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Crash Override Brand Guidelines</h1>
+    <p>Visual brand canon: tokens, themes, typography, color, spacing, and imagery.</p>
+  </header>
+
+  <main>
+    <section class="section" aria-labelledby="sec-color">
+      <h2 class="section-title" id="sec-color">Color</h2>
+      <ul class="link-grid">
+        <li><a href="guidelines/color-palette.html">Color Palette</a></li>
+        <li><a href="guidelines/color-neon.html">Atomic Lime (Neon)</a></li>
+        <li><a href="guidelines/color-neutrals.html">Neutrals</a></li>
+        <li><a href="guidelines/color-capabilities.html">Capability Colors</a></li>
+        <li><a href="guidelines/color-surface-status.html">Surface &amp; Status</a></li>
+        <li><a href="guidelines/theme-light-dark.html">Light / Dark Theme</a></li>
+        <li><a href="guidelines/shadcn-theme.html">shadcn/ui Theme</a></li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="sec-type">
+      <h2 class="section-title" id="sec-type">Typography</h2>
+      <ul class="link-grid">
+        <li><a href="guidelines/type-fonts.html">Fonts</a></li>
+        <li><a href="guidelines/type-display.html">Display Type</a></li>
+        <li><a href="guidelines/type-body.html">Body Type</a></li>
+        <li><a href="guidelines/type-mono.html">Mono / Code</a></li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="sec-spacing">
+      <h2 class="section-title" id="sec-spacing">Spacing &amp; Layout</h2>
+      <ul class="link-grid">
+        <li><a href="guidelines/spacing-scale.html">Spacing Scale</a></li>
+        <li><a href="guidelines/spacing-radius.html">Radius &amp; Shadow</a></li>
+        <li><a href="guidelines/animation-guidance.html">Animation</a></li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="sec-brand">
+      <h2 class="section-title" id="sec-brand">Brand Identity</h2>
+      <ul class="link-grid">
+        <li><a href="guidelines/brand-logos.html">Logos</a></li>
+        <li><a href="guidelines/brand-icon.html">Icon</a></li>
+        <li><a href="guidelines/brand-icons.html">Icon Set</a></li>
+        <li><a href="guidelines/brand-capability-spine.html">Capability Spine</a></li>
+        <li><a href="guidelines/diagram-build-lineage.html">Diagram: Build Lineage</a></li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="sec-imagery">
+      <h2 class="section-title" id="sec-imagery">Imagery &amp; Product Visuals</h2>
+      <ul class="link-grid">
+        <li><a href="guidelines/imagery-product-visuals.html">Product Visuals</a></li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="sec-a11y">
+      <h2 class="section-title" id="sec-a11y">Accessibility</h2>
+      <ul class="link-grid">
+        <li><a href="guidelines/accessibility.html">Accessibility Guidelines</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Crash Override brand assets are proprietary. Fonts are SIL OFL 1.1.
+  </footer>
+</body>
+</html>
