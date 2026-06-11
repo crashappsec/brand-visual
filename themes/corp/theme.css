@@ -3,9 +3,9 @@
    Layer: variant (top of the three-layer stack)
 
    PURPOSE: This file restates the DEFAULT (dark, :root) semantic
-   mapping from tokens/semantic.css explicitly. It documents
-   "this is the corp look" so future variant authors have a
-   clear template to copy and remap.
+   mapping from tokens/semantic.css, with documented normalizations
+   and a labeled alias section; variants copy this file and remap
+   roles.
 
    HOW TO USE:
      1. Copy this file to themes/<your-theme>/theme.css.
@@ -24,22 +24,29 @@
      tokens/semantic.css                   (semantic roles -- context meaning)
      themes/<name>/theme.css               (variant -- role remap for a brand context)
 
-   Corp theme restates the default mapping from tokens/semantic.css.
-   Variants copy this file and remap roles.
    ============================================================ */
 
-/* ── Accent ───────────────────────────────────────────────────── */
 /*
-   The corp primary accent is Atomic lime. On all product and
-   marketing surfaces this is the go-to interactive, highlight,
-   and CTA colour. Variants may swap this for an approved core
-   colour (e.g. Fandango for a partner theme) but must not
-   introduce a new colour not already in tokens/colors.css.
+   Normalization notes: this file is contract-clean (var() references
+   only). Where tokens/semantic.css assigns raw literals, corp references
+   the nearest core token; the rendered value may differ slightly until
+   the deferred dark-ramp cleanup tokenizes those literals.
+
+   Role                  semantic.css literal    corp reference            Impact
+   --btn-primary-text    #0B0F19                 var(--color-co-black)     #161616; contrast on Atomic lime preserved well above AA
+   --btn-enterprise-text #FFFFFF                 var(--color-white)        #F7F6F5; near-white; contrast on Fandango unaffected at this delta
+   --border-default1     hsl(225, 25%, 35%)      var(--color-grey-700)     #3A3E4E; nearest navy-tinted grey in core scale; hairline weight unchanged
 */
+
 :root {
-  --accent: var(--color-atomic-lime);
-  --accent-hover: var(--color-neon-300);
-  --accent-active: var(--color-neon-600);
+  /* ── Accent ─────────────────────────────────────────────────── */
+  /*
+     The corp primary accent is Atomic lime. On all product and
+     marketing surfaces this is the go-to interactive, highlight,
+     and CTA colour. Variants may swap this for an approved core
+     colour (e.g. Fandango for a partner theme) but must not
+     introduce a new colour not already in tokens/colors.css.
+  */
 
   /* ── Surfaces ───────────────────────────────────────────────── */
   --surface-primary: var(--color-dark-surface);
@@ -78,8 +85,8 @@
   --text-label-yellow: var(--color-yellow-700);
 
   /* ── Borders ────────────────────────────────────────────────── */
-  --border-default: var(--color-grey-700);
-  --border-strong: var(--color-grey-300);
+  --border-default1: var(--color-grey-700);       /* see normalization notes */
+  --border-default2: var(--color-grey-300);
   --border-grey: var(--color-grey-600);
   --border-hairline: var(--color-white-8);        /* rgba overlay token */
   --border-negative: var(--color-red-800);
@@ -90,7 +97,7 @@
   /* Primary -- Atomic lime fill, Black label */
   --btn-primary-bg: var(--color-neon-400);
   --btn-primary-border: var(--color-neon-400);
-  --btn-primary-text: var(--color-co-black);
+  --btn-primary-text: var(--color-co-black);      /* see normalization notes */
 
   /* Secondary -- ghost with grey outline */
   --btn-secondary-bg: transparent;
@@ -106,12 +113,26 @@
   /* Enterprise CTA -- Fandango fill, hero/CTA bands only */
   --btn-enterprise-bg: var(--color-cobalt-500);
   --btn-enterprise-border: var(--color-cobalt-500);
-  --btn-enterprise-text: var(--color-white);
+  --btn-enterprise-text: var(--color-white);      /* see normalization notes */
 
   /* ── Focus ──────────────────────────────────────────────────── */
   --focus-ring: var(--color-neon-400);
+}
 
-  /* ── Status indicators ──────────────────────────────────────── */
+/* ============================================================
+   Variant-author aliases: convenience roles not present in
+   tokens/semantic.css; variants may remap these.
+   ============================================================ */
+:root {
+  /* Primary accent shorthand */
+  --accent: var(--color-atomic-lime);
+  --accent-hover: var(--color-neon-300);
+  --accent-active: var(--color-neon-600);
+
+  /* Raised border weight (heavier than --border-default1/2) */
+  --border-strong: var(--color-grey-300);
+
+  /* Status indicators */
   --status-error: var(--color-red-800);
   --status-warning: var(--color-yellow-700);
   --status-success: var(--color-neon-600);
