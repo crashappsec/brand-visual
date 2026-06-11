@@ -4,6 +4,7 @@
   "description": "Visual brand canon for Crash Override. This repo is the single source of truth for tokens, guidelines, assets, themes, deck templates, and the co-design plugin. Verbal brand lives in the marketplace's co-gtm plugin.",
   "type": "module",
   "scripts": {
+    "lint:tokens": "stylelint 'tokens/**/*.css' 'themes/**/*.css'",
     "check:tokens": "node scripts/check-token-integrity.mjs",
     "check:contract": "node scripts/check-brand-contract.mjs",
     "check:contrast": "node scripts/check-contrast.mjs",
@@ -20,5 +21,9 @@
   "homepage": "https://github.com/crashappsec/brand-visual#readme",
   "dependencies": {
     "colorjs.io": "^0.6.1"
+  },
+  "devDependencies": {
+    "stylelint": "^17.13.0",
+    "stylelint-config-standard": "^40.0.0"
   }
 }

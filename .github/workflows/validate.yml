@@ -1,0 +1,31 @@
+name: Validate
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Token CSS lint
+        run: npm run lint:tokens
+      - name: Token integrity (official palette values)
+        run: node scripts/check-token-integrity.mjs
+      - name: Brand contract (themes assign roles to core tokens only)
+        run: node scripts/check-brand-contract.mjs
+      - name: Contrast assertions (WCAG 2.2 AA, core + every theme)
+        run: node scripts/check-contrast.mjs
+      - name: Regenerate skill references
+        run: node scripts/build-skill-refs.mjs
+      - name: Generated references must not be stale
+        run: git diff --exit-code claude-plugin/skills/co-design/references/
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Validate plugin
+        run: claude plugin validate claude-plugin/

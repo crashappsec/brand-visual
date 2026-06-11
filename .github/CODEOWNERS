@@ -1,0 +1,18 @@
+# Default: brand maintainers
+*                   @crashappsec/brand-maintainers
+
+# Core values and identity assets: marketing approval is the merge gate
+tokens/             @crashappsec/marketing
+assets/             @crashappsec/marketing
+fonts/              @crashappsec/marketing
+
+# Variants: proposing team + marketing
+themes/             @crashappsec/marketing
+themes/platform/    @crashappsec/product @crashappsec/marketing
+
+# Deck templates (Phase 5)
+decks/              @crashappsec/marketing
+
+# Plugin and build
+claude-plugin/      @crashappsec/brand-maintainers
+scripts/            @crashappsec/brand-maintainers
