@@ -1,8 +1,20 @@
 {
-  "name": "brand-visual",
+  "name": "@crashoverride/brand-tokens",
   "version": "1.0.0",
-  "description": "Visual brand canon for Crash Override. This repo is the single source of truth for tokens, guidelines, assets, themes, deck templates, and the co-design plugin. Verbal brand lives in the marketplace's co-gtm plugin.",
+  "description": "Crash Override visual brand tokens, themes, and fonts (canonical)",
   "type": "module",
+  "license": "SEE LICENSE IN LICENSE",
+  "files": [
+    "tokens",
+    "themes",
+    "fonts",
+    "README.md"
+  ],
+  "exports": {
+    "./tokens/*.css": "./tokens/*.css",
+    "./themes/*/theme.css": "./themes/*/theme.css",
+    "./fonts/*": "./fonts/*"
+  },
   "scripts": {
     "lint:tokens": "stylelint 'tokens/**/*.css' 'themes/**/*.css'",
     "check:tokens": "node scripts/check-token-integrity.mjs",
@@ -14,7 +26,6 @@
     "type": "git",
     "url": "git+https://github.com/crashappsec/brand-visual.git"
   },
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/crashappsec/brand-visual/issues"
   },

@@ -1,0 +1,27 @@
+CRASH OVERRIDE BRAND ASSETS — PROPRIETARY LICENSE
+
+Copyright (c) Crash Override, Inc. All rights reserved.
+
+The brand assets, design tokens, guidelines, themes, and all other visual
+identity materials in this repository (collectively, "Brand Assets") are
+proprietary to Crash Override, Inc. and are protected by copyright and
+other intellectual property laws.
+
+You may not copy, reproduce, modify, distribute, publicly display, or
+create derivative works from the Brand Assets without the express written
+permission of Crash Override, Inc., except as expressly permitted in
+writing by Crash Override, Inc. for internal use by authorized personnel.
+
+FONTS
+
+The following font families vendored in this repository are licensed under
+the SIL Open Font License, Version 1.1. The full license text for each
+family is included in the OFL.txt file in the respective font directory:
+
+  fonts/jetbrains-mono/   JetBrains Mono (c) JetBrains s.r.o.
+  fonts/inter/            Inter (c) The Inter Project Authors (rsms)
+  fonts/geist-mono/       Geist Mono (c) Vercel, Inc.
+
+The SIL OFL permits use, study, modification, and redistribution of the
+font software under the terms of the OFL. It does not grant any rights to
+the Crash Override brand assets described above.
