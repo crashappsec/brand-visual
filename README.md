@@ -11,6 +11,8 @@ Visual brand canon for Crash Override. This repo is the single source of truth f
 - `styles.css`: root CSS entry point that imports all tokens
 - `fonts/`: vendored OFL font files (JetBrains Mono, Inter, Geist Mono), self-hosted and installable
 - `themes/`: governed variant layer (corp mapping today; platform and open-source onboard later)
+- `decks/`: on-brand slide masters (`shared/`) and deck variants (`sales/`, `conference/`, `hacker-con/`) as theme remaps under the brand contract; see `decks/README.md`
+- `docs/`: audit and decision records (e.g. the `crash-override-design` zip audit)
 - `claude-plugin/`: the co-design skill with generated token references for agent tools
 - `scripts/`: reference generator and CI guardrails (token integrity, brand contract, WCAG contrast)
 

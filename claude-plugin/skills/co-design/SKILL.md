@@ -54,7 +54,9 @@ token.
   and install usage. Read when building on shadcn/ui.
 - `references/accessibility.md`: contrast and legibility rules for color and
   text on colored surfaces. Read before finalizing color choices.
-- `references/decks.md`: deck and slide guidance. Read for presentation work.
+- `references/decks.md`: deck and slide guidance. Read for any presentation
+  work: how to pick the variant (sales vs conference vs hacker-con), the shared
+  slide masters in `decks/`, and per-variant accent and surface rules.
 
 ## Cross-reference
 

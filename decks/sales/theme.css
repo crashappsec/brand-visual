@@ -1,0 +1,55 @@
+/* ============================================================
+   Crash Override -- Sales deck variant
+   Layer: variant (deck) -- role remap only, no new values
+
+   PURPOSE
+     The sales variant presents on LIGHT surfaces with Fandango
+     (brand purple) as the accent, for printed leave-behinds and
+     bright meeting rooms where a dark deck washes out.
+
+   HOW LIGHT SURFACES HAPPEN
+     This file does NOT remap surface or text roles. Light surfaces
+     come from the brand's existing, AA-verified light mapping:
+     render the deck with data-theme="light" on the deck root (the
+     same switch tokens/semantic.css and the corp theme already use).
+     check-contrast.mjs verifies the light role pairs in its
+     "core light" context, so the surfaces and text this deck sits on
+     are already known to clear WCAG 2.2 AA. The variant only SELECTS
+     an approved accent; it adds no surface/text values of its own
+     (spec section 4.4 core-layer rule).
+
+   ACCENT CHOICE
+     Atomic lime (#B3FF00) is illegible as text or a fill on white
+     (1.7:1 -- see references/accessibility.md), so on light surfaces
+     the action/accent role moves to Fandango. Text and focus use
+     --color-fandango-700 (#5A2173), the token asserted "AA text on
+     light tints"; fills use the brand Fandango.
+
+   CONTRACT
+     Every declaration assigns a semantic role to a core token via
+     var(--...). No raw hex/rgb/hsl/oklch. New values would enter
+     tokens/colors.css first, never here. Linted by
+     check-brand-contract.mjs over the decks CSS tree.
+   ============================================================ */
+
+:root {
+  /* Accent -> Fandango (light-surface safe) */
+  --accent: var(--color-fandango-700);
+  --accent-hover: var(--color-cobalt-600);
+  --accent-active: var(--color-fandango-700);
+
+  /* Emphasis / link text on light: Fandango-700 (AA on light tints) */
+  --text-emphasis: var(--color-fandango-700);
+
+  /* Eyebrow / capability label accent -> Fandango */
+  --text-label-accent: var(--color-fandango-700);
+
+  /* Primary action -> Fandango fill with near-white label
+     (the enterprise CTA pairing the brand already uses) */
+  --btn-primary-bg: var(--color-fandango-500);
+  --btn-primary-border: var(--color-fandango-500);
+  --btn-primary-text: var(--color-white);
+
+  /* Focus ring on light surfaces -> Fandango-700 (accessibility.md) */
+  --focus-ring: var(--color-fandango-700);
+}
