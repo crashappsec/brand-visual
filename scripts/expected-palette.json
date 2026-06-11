@@ -1,0 +1,14 @@
+{
+  "--color-co-black": "#161616",
+  "--color-fandango": "#823AA4",
+  "--color-jazzberry": "#FF3F86",
+  "--color-thunder": "#E8E2DC",
+  "--color-atomic-lime": "#B3FF00",
+
+  "--color-grey-700": "#3A3E4E",
+  "--color-grey-800": "#1E2336",
+  "--color-grey-850": "#161B2E",
+  "--color-grey-900": "#0F1426",
+  "--color-dark-surface-secondary": "#2A2E3A",
+  "--color-code-bg": "#0E0F10"
+}
