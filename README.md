@@ -16,6 +16,31 @@ Visual brand canon for Crash Override. This repo is the single source of truth f
 
 Convention note: authored prose in this repo avoids em-dashes (brand rule). CSS comments inside copied canon files and generated tables that quote them are exempt.
 
+## Consuming the tokens
+
+Distribution is by git tag (decided 2026-06-11). The `@crashoverride/brand-tokens` package is installed straight from this repo at a tagged version; npm resolves git refs natively, so no registry account is needed:
+
+```jsonc
+// package.json
+{
+  "dependencies": {
+    "@crashoverride/brand-tokens": "github:crashappsec/brand-visual#v1.0.0"
+  }
+}
+```
+
+Then import what you need (the `exports` map exposes tokens, themes, and fonts):
+
+```css
+@import "@crashoverride/brand-tokens/tokens/colors.css";
+@import "@crashoverride/brand-tokens/tokens/semantic.css";
+@import "@crashoverride/brand-tokens/themes/corp/theme.css";
+```
+
+Pin to a tag, not a branch, so token changes arrive as reviewable dependency bumps. A future npm channel (`npm i @crashoverride/brand-tokens`) can be added without changing this repo; consumers would only swap the dependency line.
+
+The shadcn component registry (themed React components) is a separate channel served from react-design-system; see `claude-plugin/skills/co-design/references/registry.md`.
+
 ## Provenance
 
 Tokens, guidelines, assets, and styles were copied from:
