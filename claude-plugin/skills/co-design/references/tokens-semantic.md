@@ -77,7 +77,7 @@ Generated from tokens/semantic.css by scripts/build-skill-refs.mjs. Do not edit.
 | `--surface-disabled` | #E5E5E5 | #E5E5E5 |  |
 | `--surface-card` | #FFFFFF | #FFFFFF |  |
 | `--border-default1` | #E5E5E5 | #E5E5E5 |  |
-| `--border-default2` | #9D9D9D | #9D9D9D |  |
+| `--border-default2` | #8E8E8E | #8E8E8E |  |
 | `--border-grey` | #CCCCCC | #CCCCCC |  |
 | `--border-hairline` | rgba(0, 0, 0, 0.08) | rgba(0, 0, 0, 0.08) |  |
 | `--btn-primary-bg` | var(--color-cobalt-500) | #823AA4 |  |
