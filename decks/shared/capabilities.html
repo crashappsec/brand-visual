@@ -1,0 +1,37 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Capability Slide" subtitle="Four-capability spine — colored accent cards" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  html, body { margin: 0; }
+  .slide { width: 1280px; height: 720px; box-sizing: border-box; background: var(--surface-primary); padding: 64px 72px; display: flex; flex-direction: column; }
+  .topbar { width: 100%; height: 3px; background: var(--color-neon-400); margin-bottom: 26px; }
+  .label { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-magenta-500); margin-bottom: 10px; }
+  h1 { font-family: var(--font-title); font-size: 40px; color: var(--text-primary); margin: 0 0 8px; letter-spacing: -0.02em; }
+  .sub { font-family: var(--font-body); font-size: 18px; color: var(--text-secondary); margin: 0 0 40px; }
+  .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; flex: 1; }
+  .card { position: relative; background: var(--surface-card); border: 1px solid var(--border-hairline); border-radius: 0; padding: 30px 22px 26px; display: flex; flex-direction: column; }
+  .card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--c); }
+  .n { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.14em; color: var(--c); font-weight: 600; }
+  .t { font-family: var(--font-title); font-size: 28px; color: var(--text-primary); margin: 14px 0 12px; }
+  .d { font-family: var(--font-body); font-size: 15px; color: var(--text-secondary); line-height: 1.55; }
+  .foot { font-family: var(--font-mono); font-size: 14px; color: var(--c); margin-top: auto; padding-top: 18px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="topbar"></div>
+  <div class="label">The Platform</div>
+  <h1>Four capabilities. One signed chain.</h1>
+  <p class="sub">From the desktop where code is written to the container running in production.</p>
+  <div class="cols">
+    <div class="card" style="--c:var(--color-cobalt-500)"><div class="n">01 · MONITOR</div><div class="t">Watch</div><div class="d">Human + agent activity on the desktop, before code hits the build.</div><div class="foot">No blind spots</div></div>
+    <div class="card" style="--c:var(--color-magenta-500)"><div class="n">02 · INSPECT</div><div class="t">Record</div><div class="d">Inside the build black box. Every dependency, mutation and layer.</div><div class="foot">Deterministic</div></div>
+    <div class="card" style="--c:var(--color-neon-300)"><div class="n">03 · TAG</div><div class="t">Sign</div><div class="d">A cryptographic flight recorder embedded into every artifact.</div><div class="foot">Tamper-proof</div></div>
+    <div class="card" style="--c:var(--color-neon-400)"><div class="n">04 · TRACK</div><div class="t">Beacon</div><div class="d">AirTags report back from production: where, what's inside, what changed.</div><div class="foot">Continuous</div></div>
+  </div>
+</div>
+</body>
+</html>

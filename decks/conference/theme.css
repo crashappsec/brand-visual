@@ -1,0 +1,40 @@
+/* ============================================================
+   Crash Override -- Conference deck variant
+   Layer: variant (deck) -- role remap only, no new values
+
+   PURPOSE
+     The conference variant is the standard dark corporate deck:
+     Black surfaces, Atomic lime accent, the default capability
+     coloring. It is what the brand looks like with no special
+     direction, sized for a projector in a dark room.
+
+   RELATIONSHIP TO CORP
+     Conference intentionally pins to the corp defaults. It restates
+     the accent roles as the corp Atomic-lime selections so the intent
+     is explicit and reviewable, rather than relying on inheritance.
+     Render on the default (dark) theme; no data-theme override.
+
+   CONTRACT
+     Every declaration assigns a semantic role to a core token via
+     var(--...). No raw hex/rgb/hsl/oklch. New values would enter
+     tokens/colors.css first, never here. Linted by
+     check-brand-contract.mjs over the decks CSS tree.
+   ============================================================ */
+
+:root {
+  /* Accent -> Atomic lime (the corp default, restated explicitly) */
+  --accent: var(--color-atomic-lime);
+  --accent-hover: var(--color-neon-300);
+  --accent-active: var(--color-neon-600);
+
+  /* Emphasis / link text -> Atomic lime on dark */
+  --text-emphasis: var(--color-neon-400);
+
+  /* Primary action -> Atomic lime fill, Black label (corp default) */
+  --btn-primary-bg: var(--color-neon-400);
+  --btn-primary-border: var(--color-neon-400);
+  --btn-primary-text: var(--color-co-black);
+
+  /* Focus ring -> Atomic lime (dark surfaces) */
+  --focus-ring: var(--color-neon-400);
+}

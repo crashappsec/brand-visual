@@ -1,0 +1,41 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Title Slide" subtitle="Opener — neon bar, brand wordmark, agenda" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  html, body { margin: 0; }
+  .slide {
+    width: 1280px; height: 720px; box-sizing: border-box;
+    background: var(--surface-primary);
+    padding: 90px 96px;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .grid-bg { position: absolute; inset: 0; background-image: radial-gradient(var(--color-neon-400-8) 1px, transparent 1px); background-size: 28px 28px; opacity: 0.5; mask-image: radial-gradient(ellipse 60% 60% at 80% 30%, black, transparent); }
+  .logo { height: 30px; width: auto; align-self: flex-start; margin-bottom: 56px; position: relative; }
+  .bar { width: 88px; height: 4px; background: var(--color-neon-400); margin-bottom: 30px; position: relative; }
+  h1 { font-family: var(--font-title); font-size: 64px; color: var(--text-primary); margin: 0 0 16px; letter-spacing: -0.03em; position: relative; }
+  h1 .accent { color: var(--color-neon-400); }
+  .sub { font-family: var(--font-body); font-size: 22px; color: var(--text-secondary); margin: 0 0 40px; position: relative; }
+  .sub .cap-m { color: var(--color-cobalt-400); font-weight: 600; }
+  .sub .cap-i { color: var(--color-magenta-500); font-weight: 600; }
+  .sub .cap-t { color: var(--color-neon-300); font-weight: 600; }
+  .sub .cap-k { color: var(--color-neon-400); font-weight: 600; }
+  .agenda { font-family: var(--font-mono); font-size: 15px; color: var(--text-tertiary); line-height: 1.7; position: relative; max-width: 720px; }
+  .meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-tertiary); margin-top: 28px; position: relative; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="grid-bg"></div>
+  <img class="logo" src="../../assets/logos/logo-white.svg" alt="Crash Override wordmark" />
+  <div class="bar"></div>
+  <h1>The Data Plane for<br/>Software in the <span class="accent">AI Era</span></h1>
+  <p class="sub"><span class="cap-m">Monitor.</span> <span class="cap-i">Inspect.</span> <span class="cap-t">Tag.</span> <span class="cap-k">Track.</span> — one signed chain from code to production.</p>
+  <p class="agenda">Today: the agentic-code blind spot · the four-capability platform · open-source core · live demo · what's next</p>
+  <p class="meta">Executive Overview — June 2026</p>
+</div>
+</body>
+</html>

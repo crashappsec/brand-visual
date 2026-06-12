@@ -1,0 +1,26 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Big Stat Slide" subtitle="Single provocative number / quote on phosphor-dark" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  html, body { margin: 0; }
+  .slide { width: 1280px; height: 720px; box-sizing: border-box; background: var(--surface-primary); padding: 96px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+  .glow { position: absolute; width: 620px; height: 620px; right: -160px; top: -160px; background: radial-gradient(circle, var(--color-neon-400-15), transparent 70%); filter: blur(20px); }
+  .label { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-neon-400); margin-bottom: 28px; position: relative; }
+  .stat { font-family: var(--font-title); font-size: 200px; line-height: 0.9; color: var(--text-primary); letter-spacing: -0.04em; margin: 0; position: relative; }
+  .stat .unit { color: var(--color-neon-400); }
+  .desc { font-family: var(--font-body); font-size: 26px; color: var(--text-secondary); margin: 32px 0 0; max-width: 760px; line-height: 1.4; position: relative; }
+  .desc b { color: var(--text-primary); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="glow"></div>
+  <div class="label">The blind spot</div>
+  <p class="stat">41<span class="unit">%</span></p>
+  <p class="desc">of code shipped last quarter was written or modified by an <b>AI agent</b> — and most teams can't say where any of it is running today.</p>
+</div>
+</body>
+</html>
