@@ -1,0 +1,47 @@
+/* ============================================================
+   Crash Override -- Gibson Theme (INTERNAL ONLY)
+   Layer: variant (top of the three-layer stack)
+
+   The internal-apps brand: the Gibson admin portal
+   (gibson-hackers.com) and future internal tools. Dark-led
+   near-black indigo surfaces with the phosphor-lime primary.
+
+   INTERNAL ONLY: never apply this theme to crashoverride.com or
+   any public or customer-facing property -- public properties use
+   the corp theme. The same rule is marked on the react-registry
+   `gibson-theme` item, which is the shadcn-bridge expression of
+   this variant.
+
+   Canonical spec + approved home-board values:
+   crashappsec/react-registry docs/gibson-home-spec.md
+   (mirrored in crashappsec/digital-marketing docs/gibson/).
+
+   Per the governance rules this file only SELECTS approved core
+   tokens (the Gibson section of tokens/colors.css); it adds no
+   values. Roles not overridden here inherit the corp/semantic
+   defaults -- including the entire light mode, which stays the
+   proven corp light so in-app theme toggles remain usable.
+   ============================================================ */
+
+:root {
+  /* ── Surfaces ───────────────────────────────────────────────── */
+  --surface-primary: var(--color-gibson-indigo-900);
+  --surface-secondary: var(--color-gibson-indigo-850);
+  --surface-card: var(--color-gibson-indigo-850);
+  --surface-invert: var(--color-gibson-indigo-750);
+
+  /* ── Text ───────────────────────────────────────────────────── */
+  --text-emphasis: var(--color-gibson-phosphor);  /* links, highlighted copy */
+
+  /* ── Borders ────────────────────────────────────────────────── */
+  --border-hairline: var(--color-white-9);
+  --border-strong: var(--color-white-20);
+
+  /* ── Buttons ────────────────────────────────────────────────── */
+  --btn-primary-bg: var(--color-gibson-phosphor);
+  --btn-primary-border: var(--color-gibson-phosphor);
+
+  /* ── Accent + focus ─────────────────────────────────────────── */
+  --accent: var(--color-gibson-phosphor);
+  --focus-ring: var(--color-gibson-phosphor);
+}

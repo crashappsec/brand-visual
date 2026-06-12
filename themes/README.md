@@ -66,6 +66,7 @@ new values.
 | Theme | Path | Status | Description |
 |-------|------|--------|-------------|
 | corp  | `themes/corp/theme.css` | stable | Default corp dark look; restates semantic.css defaults |
+| gibson | `themes/gibson/theme.css` | internal | **INTERNAL ONLY** -- Gibson admin portal + internal apps (gibson-hackers.com): near-black indigo surfaces, phosphor-lime primary. Never on crashoverride.com or any public property |
 
 `themes/platform/` and `themes/open-source/` are authored by their respective
 teams when needed. No placeholder directories exist until a team opens a PR.

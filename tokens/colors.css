@@ -154,4 +154,20 @@
   --color-teal-400-15: rgba(255, 63, 134, 0.15);
 
   --color-white-8: rgba(255, 255, 255, 0.08);
+  --color-white-9: rgba(255, 255, 255, 0.09);   /* Gibson hairline borders */
+  --color-white-20: rgba(255, 255, 255, 0.2);   /* Gibson strong borders */
+
+  /* ── Gibson (INTERNAL ONLY) ──────────────────────────────────
+     The internal-apps brand (gibson-hackers.com — admin portal and
+     future internal tools). Near-black indigo surface ramp (hue 274)
+     plus the phosphor-lime primary. NEVER use these on
+     crashoverride.com or any public/customer-facing property.
+     Canonical spec: react-registry docs/gibson-home-spec.md;
+     consumed by the react-registry `gibson-theme` item. */
+  --color-gibson-indigo-950: oklch(0.125 0.018 274);  /* sidebar / deepest chrome */
+  --color-gibson-indigo-900: oklch(0.145 0.02 274);   /* page background */
+  --color-gibson-indigo-850: oklch(0.185 0.022 274);  /* cards / raised surfaces */
+  --color-gibson-indigo-800: oklch(0.22 0.025 274);   /* secondary / muted surfaces */
+  --color-gibson-indigo-750: oklch(0.24 0.03 274);    /* hover / selection bg */
+  --color-gibson-phosphor: oklch(0.93 0.25 124);      /* primary accent (phosphor lime) */
 }
