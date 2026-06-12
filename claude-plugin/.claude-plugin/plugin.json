@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin.json",
   "name": "co-design",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Crash Override visual brand: official palette and tokens, typography, spacing, logo usage, themes, and rules for generating on-brand decks, pages, mockups, diagrams, and social images. For voice and messaging rules use the brand-review skill in co-gtm.",
   "author": { "name": "Crash Override", "email": "mark@crashoverride.com" }
 }
