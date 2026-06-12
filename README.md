@@ -41,13 +41,13 @@ Then import what you need (the `exports` map exposes tokens, themes, and fonts):
 
 Pin to a tag, not a branch, so token changes arrive as reviewable dependency bumps. A future npm channel (`npm i @crashoverride/brand-tokens`) can be added without changing this repo; consumers would only swap the dependency line.
 
-The shadcn component registry (themed React components) is a separate channel served from react-design-system; see `claude-plugin/skills/co-design/references/registry.md`.
+The shadcn component registry (themed React components) is a separate channel served from react-registry; see `claude-plugin/skills/co-design/references/registry.md`.
 
 ## Provenance
 
 Tokens, guidelines, assets, and styles were copied from:
 
-- Source repo: https://github.com/crashappsec/react-design-system
+- Source repo: https://github.com/crashappsec/react-registry
 - Source commit: cb52e9f1fa82a9ae5afdb70e3e4056a865952851
 - Date: 2026-06-11
 
