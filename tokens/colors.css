@@ -155,7 +155,7 @@
 
   --color-white-8: rgba(255, 255, 255, 0.08);
   --color-white-9: rgba(255, 255, 255, 0.09);   /* Gibson hairline borders */
-  --color-white-20: rgba(255, 255, 255, 0.2);   /* Gibson strong borders */
+  --color-white-20: rgba(255, 255, 255, 0.20);  /* Gibson strong borders */
 
   /* ── Gibson (INTERNAL ONLY) ──────────────────────────────────
      The internal-apps brand (gibson-hackers.com — admin portal and
