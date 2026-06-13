@@ -23,7 +23,9 @@
    proven corp light so in-app theme toggles remain usable.
    ============================================================ */
 
-:root {
+:root:not([data-theme="light"]):not(.light),
+[data-theme="dark"],
+.dark {
   /* ── Surfaces ───────────────────────────────────────────────── */
   --surface-primary: var(--color-gibson-indigo-900);
   --surface-secondary: var(--color-gibson-indigo-850);
