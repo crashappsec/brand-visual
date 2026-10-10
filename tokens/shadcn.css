@@ -18,6 +18,14 @@
    CONVENTION: dark is the brand default (:root). Light is opt-in
    via [data-theme="light"] / .light. shadcn's `.dark` is honoured
    for drop-in compatibility.
+
+   BRAND VALUES: Black, Fandango, Jazzberry, and Atomic lime below
+   are oklch equivalents that round-trip to the Brand book v1 HEX
+   (#0B1221, #523AA4, #FF2F8E, #B3FF00). There is no off-book white
+   (decision 2026-10-10): white roles use Thunder tint-10 #FCFCFB,
+   oklch(0.991 0.001 106). Other values (slate cards, grey borders,
+   the light-ground chart-2 shade, amber/teal chart slots) have no
+   book basis and are kept unchanged pending a brand decision.
    ============================================================ */
 
 /* ── LIGHT — paste as :root in a standard shadcn project ─────── */
@@ -25,20 +33,20 @@
 .light {
   --radius: 0.25rem;                        /* brand is deliberately sharp */
 
-  --background: oklch(1 0 0);               /* #FFFFFF */
+  --background: oklch(0.991 0.001 106);    /* Thunder tint-10 #FCFCFB (no off-book white) */
   --foreground: oklch(0.205 0 0);           /* #1A1A1A */
 
-  --card: oklch(1 0 0);                     /* flat — separates via border */
+  --card: oklch(0.991 0.001 106);           /* flat — separates via border */
   --card-foreground: oklch(0.205 0 0);
-  --popover: oklch(1 0 0);
+  --popover: oklch(0.991 0.001 106);
   --popover-foreground: oklch(0.205 0 0);
 
   /* In light mode the brand's action colour is Fandango purple
      (Atomic lime is illegible as a fill on white; the brand has no blue). */
-  --primary: oklch(0.46 0.18 309);          /* Fandango #823AA4 */
-  --primary-foreground: oklch(1 0 0);
+  --primary: oklch(0.438 0.163 288);        /* Fandango #523AA4 */
+  --primary-foreground: oklch(0.991 0.001 106);
 
-  --secondary: oklch(0.95 0.004 75);        /* Thunder-tint #EDE9E4 */
+  --secondary: oklch(0.95 0.004 75);        /* Thunder tint-6 #F0EEEB */
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.95 0.004 75);
   --muted-foreground: oklch(0.45 0 0);      /* #595959 */
@@ -46,28 +54,28 @@
   --accent-foreground: oklch(0.205 0 0);
 
   --destructive: oklch(0.58 0.22 24);       /* #991B1B-ish, AA on white */
-  --destructive-foreground: oklch(1 0 0);
+  --destructive-foreground: oklch(0.991 0.001 106);
 
   --border: oklch(0.90 0.006 75);           /* Thunder-grey border */
   --input: oklch(0.90 0.006 75);
-  --ring: oklch(0.46 0.18 309);             /* Fandango focus ring */
+  --ring: oklch(0.438 0.163 288);           /* Fandango focus ring */
 
   /* Capability palette → chart slots (Monitor/Inspect/Tag/Track/AI) */
-  --chart-1: oklch(0.46 0.18 309);          /* Fandango  — Monitor */
+  --chart-1: oklch(0.438 0.163 288);        /* Fandango  — Monitor */
   --chart-2: oklch(0.58 0.22 5);            /* Jazzberry — Inspect */
   --chart-3: oklch(0.70 0.16 70);           /* Amber     — Tag (extended) */
   --chart-4: oklch(0.80 0.21 124);          /* Atomic lime — Track */
   --chart-5: oklch(0.62 0.13 183);          /* Teal      — AI (extended) */
 
   /* Sidebar surface tokens */
-  --sidebar: oklch(0.985 0.003 75);
+  --sidebar: oklch(0.980 0.002 67.8);       /* Thunder tint-9 #F9F8F7 */
   --sidebar-foreground: oklch(0.205 0 0);
-  --sidebar-primary: oklch(0.46 0.18 309);
-  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.438 0.163 288);
+  --sidebar-primary-foreground: oklch(0.991 0.001 106);
   --sidebar-accent: oklch(0.92 0.006 75);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.90 0.006 75);
-  --sidebar-ring: oklch(0.46 0.18 309);
+  --sidebar-ring: oklch(0.438 0.163 288);
 }
 
 /* ── DARK — brand default. Paste as .dark in a shadcn project ── */
@@ -76,43 +84,43 @@
 .dark {
   --radius: 0.25rem;
 
-  --background: oklch(0.20 0 0);       /* Black #161616 (neutral) */
-  --foreground: oklch(0.97 0.004 90);       /* Thunder-tinted white */
+  --background: oklch(0.184 0.033 264);     /* Black #0B1221 (navy) */
+  --foreground: oklch(0.991 0.001 106);    /* white role: Thunder tint-10 #FCFCFB */
 
   --card: oklch(0.30 0.02 274);             /* slate raised surface */
-  --card-foreground: oklch(0.97 0.004 90);
+  --card-foreground: oklch(0.991 0.001 106);
   --popover: oklch(0.33 0.02 274);          /* slate — menus lift a touch */
-  --popover-foreground: oklch(0.97 0.004 90);
+  --popover-foreground: oklch(0.991 0.001 106);
 
-  --primary: oklch(0.93 0.25 124);          /* Atomic lime #B3FF00 */
-  --primary-foreground: oklch(0.20 0 0); /* Black #161616 */
+  --primary: oklch(0.915 0.24 128.2);       /* Atomic lime #B3FF00 */
+  --primary-foreground: oklch(0.184 0.033 264); /* Black #0B1221 */
 
   --secondary: oklch(0.27 0.035 274);       /* surface-invert (navy lift) */
-  --secondary-foreground: oklch(0.97 0.004 90);
+  --secondary-foreground: oklch(0.991 0.001 106);
   --muted: oklch(0.27 0.035 274);
   --muted-foreground: oklch(0.68 0.02 274);
   --accent: oklch(0.27 0.035 274);          /* hover surface */
-  --accent-foreground: oklch(0.97 0.004 90);
+  --accent-foreground: oklch(0.991 0.001 106);
 
   --destructive: oklch(0.635 0.225 23);     /* #F44747 */
-  --destructive-foreground: oklch(0.97 0.004 90);
+  --destructive-foreground: oklch(0.991 0.001 106);
 
-  --border: oklch(1 0 0 / 8%);              /* hairline — brand signature */
-  --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.93 0.25 124);             /* Atomic lime focus ring */
+  --border: oklch(0.991 0.001 106 / 8%);    /* hairline — brand signature */
+  --input: oklch(0.991 0.001 106 / 14%);
+  --ring: oklch(0.915 0.24 128.2);          /* Atomic lime focus ring */
 
-  --chart-1: oklch(0.46 0.18 309);          /* Fandango  — Monitor */
-  --chart-2: oklch(0.66 0.24 5);            /* Jazzberry — Inspect */
+  --chart-1: oklch(0.438 0.163 288);        /* Fandango  — Monitor */
+  --chart-2: oklch(0.664 0.245 359.8);      /* Jazzberry — Inspect */
   --chart-3: oklch(0.76 0.16 70);           /* Amber     — Tag (extended) */
-  --chart-4: oklch(0.93 0.25 124);          /* Atomic lime — Track */
+  --chart-4: oklch(0.915 0.24 128.2);       /* Atomic lime — Track */
   --chart-5: oklch(0.70 0.13 183);          /* Teal      — AI (extended) */
 
-  --sidebar: oklch(0.20 0 0);
-  --sidebar-foreground: oklch(0.97 0.004 90);
-  --sidebar-primary: oklch(0.93 0.25 124);
-  --sidebar-primary-foreground: oklch(0.20 0 0);
+  --sidebar: oklch(0.184 0.033 264);
+  --sidebar-foreground: oklch(0.991 0.001 106);
+  --sidebar-primary: oklch(0.915 0.24 128.2);
+  --sidebar-primary-foreground: oklch(0.184 0.033 264);
   --sidebar-accent: oklch(0.27 0.035 274);
-  --sidebar-accent-foreground: oklch(0.97 0.004 90);
-  --sidebar-border: oklch(1 0 0 / 8%);
-  --sidebar-ring: oklch(0.93 0.25 124);
+  --sidebar-accent-foreground: oklch(0.991 0.001 106);
+  --sidebar-border: oklch(0.991 0.001 106 / 8%);
+  --sidebar-ring: oklch(0.915 0.24 128.2);
 }

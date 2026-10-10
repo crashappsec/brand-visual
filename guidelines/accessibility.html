@@ -72,9 +72,9 @@
           <td>Primary text on surface</td>
           <td><code>--text-primary</code></td>
           <td><code>--surface-primary</code></td>
-          <td>hsl(225,25%,98%)</td>
-          <td>#161616</td>
-          <td>17.23:1</td>
+          <td>#FCFCFB</td>
+          <td>#0B1221</td>
+          <td>18.22:1</td>
           <td class="pass">pass</td>
         </tr>
         <tr>
@@ -82,8 +82,8 @@
           <td><code>--text-secondary</code></td>
           <td><code>--surface-primary</code></td>
           <td>hsl(225,25%,80%)</td>
-          <td>#161616</td>
-          <td>10.57:1</td>
+          <td>#0B1221</td>
+          <td>10.92:1</td>
           <td class="pass">pass</td>
         </tr>
         <tr>
@@ -91,8 +91,8 @@
           <td><code>--text-tertiary</code></td>
           <td><code>--surface-primary</code></td>
           <td>hsl(225,25%,58%)</td>
-          <td>#161616</td>
-          <td>5.06:1</td>
+          <td>#0B1221</td>
+          <td>5.23:1</td>
           <td class="pass">pass</td>
         </tr>
         <tr>
@@ -100,8 +100,8 @@
           <td><code>--text-emphasis</code> (#B3FF00)</td>
           <td><code>--surface-primary</code></td>
           <td>#B3FF00</td>
-          <td>#161616</td>
-          <td>14.84:1</td>
+          <td>#0B1221</td>
+          <td>15.34:1</td>
           <td class="pass">pass</td>
         </tr>
         <tr>
@@ -118,8 +118,8 @@
           <td><code>--text-error</code> (#F44747)</td>
           <td><code>--surface-primary</code></td>
           <td>#F44747</td>
-          <td>#161616</td>
-          <td>5.03:1</td>
+          <td>#0B1221</td>
+          <td>5.20:1</td>
           <td class="pass">pass</td>
         </tr>
       </tbody>
@@ -148,8 +148,8 @@
           <td><code>--text-primary</code></td>
           <td><code>--surface-primary</code></td>
           <td>#1A1A1A</td>
-          <td>#FFFFFF</td>
-          <td>17.40:1</td>
+          <td>#FCFCFB</td>
+          <td>16.95:1</td>
           <td class="pass">pass</td>
         </tr>
         <tr>
@@ -171,19 +171,19 @@
           <td class="pass">pass</td>
         </tr>
         <tr>
-          <td>Atomic lime on white: DO NOT use</td>
+          <td>Atomic lime on light surface: DO NOT use</td>
           <td>#B3FF00</td>
-          <td>#FFFFFF</td>
+          <td><code>--surface-primary</code></td>
           <td>#B3FF00</td>
-          <td>#FFFFFF</td>
-          <td>1.22:1</td>
+          <td>#FCFCFB</td>
+          <td>1.19:1</td>
           <td class="fail">fail</td>
         </tr>
       </tbody>
     </table>
     <p class="note">
-      <b>Note:</b> Atomic lime (#B3FF00) is illegible as a text or fill color on white or
-      light surfaces. Use <code>--color-fandango-700</code> as the primary action token in
+      <b>Note:</b> Atomic lime (#B3FF00) is illegible as a text or fill color on light
+      surfaces. The brand has no white: the light surface is Thunder tint-10 (#FCFCFB). Use <code>--color-fandango-700</code> as the primary action token in
       light mode. This is why the light-theme primary button uses Fandango, not lime.
     </p>
     <p class="note">Ratios computed by <code>scripts/check-contrast.mjs</code> logic against current tokens; CI re-verifies the governed pairs on every PR.</p>
@@ -203,12 +203,12 @@
         <div class="swatch-label"><code>jazzberry-700</code><br />#B01E5A<br />AA text on jazzberry-100</div>
       </div>
       <div class="swatch">
-        <div class="swatch-block" style="background:#5A2173; color:#F1E7F7;">Aa</div>
+        <div class="swatch-block" style="background:#B01E5A; color:#FFE3EE;">Aa</div>
         <div class="swatch-label"><code>magenta-700</code> alias<br />#B01E5A<br />AA text on magenta-100</div>
       </div>
       <div class="swatch">
-        <div class="swatch-block" style="background:#161616; color:#B3FF00;">Aa</div>
-        <div class="swatch-label"><code>neon-400</code><br />#B3FF00<br />AA on co-black (14:1)</div>
+        <div class="swatch-block" style="background:var(--color-co-black); color:var(--color-atomic-lime);">Aa</div>
+        <div class="swatch-label"><code>neon-400</code><br />#B3FF00<br />AA on co-black (15.3:1)</div>
       </div>
     </div>
     <p class="note">
@@ -245,9 +245,9 @@
       AA in every supported theme variant; raw palette values may not.
     </p>
     <p class="note">
-      <b>Never:</b> Place Atomic lime text or filled elements on white or
-      Thunder-100 (<code>#F7F5F2</code>) surfaces. The contrast is insufficient for any
-      WCAG level. Swap to <code>--color-fandango-700</code> for light-mode actions.
+      <b>Never:</b> Place Atomic lime text or filled elements on light surfaces
+      (Thunder and its tints, including the light surface <code>#FCFCFB</code>). The
+      contrast is insufficient for any WCAG level. Swap to <code>--color-fandango-700</code> for light-mode actions.
     </p>
     <p class="note">
       <b>Deck and marketing artifacts:</b> Apply the same role-pair rules. Use

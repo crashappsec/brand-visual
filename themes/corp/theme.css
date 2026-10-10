@@ -33,8 +33,7 @@
    the deferred dark-ramp cleanup tokenizes those literals.
 
    Role                  semantic.css literal    corp reference            Impact
-   --btn-primary-text    #0B0F19                 var(--color-co-black)     #161616; contrast on Atomic lime preserved well above AA
-   --btn-enterprise-text #FFFFFF                 var(--color-white)        #F7F6F5; near-white; contrast on Fandango unaffected at this delta
+   --btn-primary-text    #0B0F19                 var(--color-co-black)     #0B1221; contrast on Atomic lime preserved well above AA
    --border-default1     hsl(225, 25%, 35%)      var(--color-grey-700)     #3A3E4E; nearest navy-tinted grey in core scale; hairline weight unchanged
 */
 

@@ -87,7 +87,7 @@ teams when needed. No placeholder directories exist until a team opens a PR.
    --accent: var(--color-fandango);
 
    /* wrong -- raw value */
-   --accent: #823AA4;
+   --accent: #523AA4;
    ```
 
 4. Verify locally before opening a PR:

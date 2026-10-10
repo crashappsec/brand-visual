@@ -34,7 +34,7 @@
         "core dark",
         "theme:"
       ],
-      "note": "Deviation from plan: scoped to dark contexts. --surface-invert is the hover/selection background, and --text-invert is light text intended for that raised dark surface (8.7:1 in dark). In light mode --surface-invert is a near-white hover fill (#EFEFEF) and --text-invert is near-white (#F5F5F5); the two roles do not co-occur as fg/bg there, so an unscoped check would assert a pairing the system never renders."
+      "note": "Deviation from plan: scoped to dark contexts. --surface-invert is the hover/selection background, and --text-invert is light text intended for that raised dark surface (8.7:1 in dark). In light mode --surface-invert is a near-white hover fill (Thunder tint-6 #F0EEEB, was #EFEFEF) and --text-invert is the white role (Thunder tint-10 #FCFCFB, was #F5F5F5); the two roles are not intended to co-occur as fg/bg there, so an unscoped check would assert a pairing the system does not intend. Exception to watch: a consumer that does render them together gets about 1.1:1."
     },
     {
       "name": "error text on surface",

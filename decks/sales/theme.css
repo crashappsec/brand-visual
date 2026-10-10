@@ -19,8 +19,9 @@
      (spec section 4.4 core-layer rule).
 
    ACCENT CHOICE
-     Atomic lime (#B3FF00) is illegible as text or a fill on white
-     (1.7:1 -- see references/accessibility.md), so on light surfaces
+     Atomic lime (#B3FF00) is illegible as text or a fill on light
+     surfaces (1.19:1 on Thunder tint-10 #FCFCFB -- see
+     references/accessibility.md), so on light surfaces
      the action/accent role moves to Fandango. Text and focus use
      --color-fandango-700 (#5A2173), the token asserted "AA text on
      light tints"; fills use the brand Fandango.

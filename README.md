@@ -2,6 +2,8 @@
 
 Visual brand canon for Crash Override. This repo is the single source of truth for tokens, guidelines, assets, themes, deck templates, and the co-design plugin. Verbal brand lives in the marketplace's co-gtm plugin.
 
+Colour values are a transcription of Brand book v1 (PDF, produced by BBB), which is canon: when this repo and the book disagree, the book wins and this repo is corrected (decision recorded in crashappsec/digital-marketing#2286). Release notes are in `CHANGELOG.md`.
+
 ## Contents
 
 - `tokens/`: CSS design tokens (colors, typography, spacing, semantic, shadcn, base)
@@ -15,6 +17,7 @@ Visual brand canon for Crash Override. This repo is the single source of truth f
 - `docs/`: audit and decision records (e.g. the `crash-override-design` zip audit)
 - `claude-plugin/`: the co-design skill with generated token references for agent tools
 - `scripts/`: reference generator and CI guardrails (token integrity, brand contract, WCAG contrast)
+- `CHANGELOG.md`: what changed in each tagged version
 
 Convention note: authored prose in this repo avoids em-dashes (brand rule). CSS comments inside copied canon files and generated tables that quote them are exempt.
 
@@ -51,4 +54,4 @@ Tokens, guidelines, assets, and styles were copied from:
 - Source commit: cb52e9f1fa82a9ae5afdb70e3e4056a865952851
 - Date: 2026-06-11
 
-Cross-repo git history cannot be preserved via copy; the commit SHA above is the audit trail. All canonical Black values are `#161616`.
+Cross-repo git history cannot be preserved via copy; the commit SHA above is the audit trail. That copy carried Black as `#161616`, which is not in the brand book; 1.2.0 corrected the palette to Brand book v1 (Black `#0B1221`). See `CHANGELOG.md`.

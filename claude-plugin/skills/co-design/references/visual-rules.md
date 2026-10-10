@@ -6,28 +6,35 @@ sizes, or font names; quote the resolved value from the generated tables.
 
 ## Dark first
 
-The brand is dark by default. Black `#161616` is THE surface for every content
-area: pages, cards, and sections all sit on it. Cards and sections separate
-through hairline borders and structure, never through a lighter background lift.
+The brand is dark by default. Black `#0B1221` (a navy-tinted black) is THE
+surface for every content area: pages, cards, and sections all sit on it. Cards
+and sections separate through hairline borders and structure, never through a
+lighter background lift.
 Light mode exists and is opt-in; when you build light, surfaces and text invert
 but the brand accents stay. See `tokens-semantic.md` and `theme-corp.md` for the
 role mapping in each mode.
 
 ## Official palette
 
-Five official brand colors. The brand has no blue.
+Five official brand colors, from Brand book v1 (the PDF is canon; the brand
+repo's `tokens/colors.css` transcribes it). The brand has no blue and no white:
+the light end of the palette is Thunder. "White" roles (`--color-white`, light
+surfaces) resolve to Thunder tint-10 `#FCFCFB`; never use pure `#FFFFFF`.
 
 - Atomic lime `#B3FF00`: the primary, signature accent. Interactive, highlight,
   and CTA color on dark surfaces.
-- Fandango `#823AA4`: the brand purple. Secondary accent, and the primary action
-  color in light mode (Atomic lime is illegible as a fill on white).
-- Jazzberry `#FF3F86`: hot-pink tertiary accent.
-- Thunder `#E8E2DC`: warm off-white neutral.
-- Black `#161616`: the brand dark and default surface.
+- Fandango `#523AA4`: the brand purple. Secondary accent, and the primary action
+  color in light mode (Atomic lime is illegible as a fill on light surfaces).
+- Jazzberry `#FF2F8E`: hot-pink tertiary accent.
+- Thunder `#E6E2DC`: warm off-white neutral.
+- Black `#0B1221`: the brand dark and default surface.
 
-Use the ramps and alpha overlays in `tokens-colors.md` rather than hand-mixing
-tints. Prefer semantic roles (`tokens-semantic.md`) over raw palette values when
-you are styling text, surfaces, borders, or buttons.
+Each color has the book's ten-step tint ramp: `--color-<name>-tint-1` is the
+color itself and `-tint-10` the lightest (names: `co-black`, `fandango`,
+`jazzberry`, `thunder`, `atomic-lime`). The book recommends tints for
+backgrounds. Use the tints, ramps, and alpha overlays in `tokens-colors.md`
+rather than hand-mixing. Prefer semantic roles (`tokens-semantic.md`) over raw
+palette values when you are styling text, surfaces, borders, or buttons.
 
 ## Typography roles
 
