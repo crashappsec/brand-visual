@@ -17,6 +17,16 @@ every supported theme variant; raw palette values may not.
 
 Ratios are measured by `npm run report:contrast` in the brand repo.
 
+## Ground rule: Fandango and Jazzberry
+
+Fandango (#523AA4) is text only on light grounds: 8.18:1 on the light surface
+(#FCFCFB), 2.23:1 on Black (#0B1221). Jazzberry (#FF2F8E) is text only on dark
+grounds: 5.39:1 on Black, 3.38:1 on the light surface, 2.69:1 on Thunder. On the
+wrong ground each is non-text only (fills, bars, borders, decoration). Do not
+lighten or darken the brand values to pass; restrict the usage. Put the white
+role on Fandango fills (8.18:1) and Black on Jazzberry fills (5.39:1). Use the
+`--text-label-*` roles for capability text: they resolve per ground.
+
 ## AA-passing role pairs
 
 These pairs are asserted to pass AA. CI enforces them on every PR via
@@ -31,6 +41,10 @@ These pairs are asserted to pass AA. CI enforces them on every PR via
 | tertiary text on surface | `--text-tertiary` hsl(225,25%,58%) | `--surface-primary` #0B1221 | 5.23:1 |
 | emphasis (Atomic lime) on surface | `--text-emphasis` #B3FF00 | `--surface-primary` #0B1221 | 15.34:1 |
 | primary button text on lime fill | #0B0F19 | `--btn-primary-bg` #B3FF00 | 15.70:1 |
+| Jazzberry eyebrow / Inspect label | `--text-label-accent`, `--text-label-magenta` #FF2F8E | `--surface-primary` #0B1221 | 5.39:1 |
+| Monitor label (neutral on dark) | `--text-label-cobalt` hsl(225,25%,80%) | `--surface-primary` #0B1221 | 10.92:1 |
+| enterprise button label on Fandango fill | `--btn-enterprise-text` #FCFCFB | `--btn-enterprise-bg` #523AA4 | 8.18:1 |
+| Black text on Jazzberry fill | `--color-co-black` #0B1221 | `--color-jazzberry` #FF2F8E | 5.39:1 |
 
 ### Light theme ([data-theme="light"])
 
@@ -40,6 +54,8 @@ These pairs are asserted to pass AA. CI enforces them on every PR via
 | emphasis (Fandango) on surface | `--text-emphasis` #523AA4 | `--surface-primary` #FCFCFB | 8.18:1 |
 | Fandango text on fandango tint | `--color-fandango-700` #5A2173 | `--color-fandango-100` #F1E7F7 | 9.22:1 |
 | Jazzberry text on jazzberry tint | `--color-jazzberry-700` #B01E5A | `--color-jazzberry-100` #FFE3EE | 5.50:1 |
+| Monitor label | `--text-label-cobalt` #6A2E86 | `--surface-primary` #FCFCFB | 8.71:1 |
+| eyebrow / Inspect label | `--text-label-accent`, `--text-label-magenta` #B01E5A | `--surface-primary` #FCFCFB | 6.43:1 |
 
 ## AA-aware tokens (asserted facts)
 

@@ -81,6 +81,67 @@ until consumers are re-wired (crashappsec/digital-marketing#2286 step 3).
 - `npm run report:contrast` (`check-contrast.mjs --report`) prints every governed
   ratio, pass or fail, as a table.
 - This changelog.
+- **47 tokens the consuming marketing site carries but the canon lacked**
+  ([crashappsec/digital-marketing#2287](https://github.com/crashappsec/digital-marketing/issues/2287)),
+  so adopting the canon downstream no longer deletes tokens in use. Colours in
+  `tokens/colors.css`, roles in `tokens/semantic.css` (and restated in the corp
+  theme):
+  - Alpha ramps (32): `--color-cobalt-500-{0,5,6,10,18,25,30,45}`,
+    `--color-magenta-400-{0,3,6,8,25,30,40}`, `--color-neon-400-{0,2,3,6,18,25,40}`,
+    `--color-amber-400-{0,6,8,10,25,30}`, `--color-teal-400-{0,5,8,10}`. Alpha =
+    name / 100 as downstream, but the RGB is the corrected canon base (lime
+    `179, 255, 0`; Fandango `82, 58, 164` for cobalt and amber; Jazzberry
+    `255, 47, 142` for magenta and teal), not the consumer's old bases
+    (`129, 244, 22`; `72, 87, 255`; `239, 93, 255`; `245, 158, 11`; `20, 184, 166`).
+  - Palette extensions (8): `--color-orange-{100,200}` (`#FFF2E9`, `#FFE0C9`),
+    `--color-yellow-{100,500}` (`#FFFFE0`, `#D7BA7D`), `--color-code-tab-active`
+    (downstream pure white, here `var(--color-white)`), `--color-code-tab-inactive`
+    (`hsl(225, 25%, 70%)`; light overrides `hsl(225, 25%, 12%)` / `40%`),
+    `--color-dark-brand-offwhite{1,2}` (downstream the off-book `#050e02` /
+    `#1A1F36`, which equal its own dark surface and dark-surface-invert; here
+    `var(--color-dark-surface)` / `var(--color-dark-surface-invert)`).
+  - Semantic roles (7): `--surface-brand-offwhite{1,2}` (dark: the colours above;
+    light: Thunder, since they mean the brand off-white), `--surface-grey`
+    (`--color-grey-600` / light `#9D9D9D`), `--surface-warning`
+    (`--color-yellow-200` / light `#FEF3C7`), `--surface-yellow`
+    (`--color-yellow-400`), `--border-disabled{1,2}` (`hsl(225, 25%, 35%)` and
+    `--color-grey-600` / light `#E5E5E5`, `#CCCCCC`).
+- **Ground rule for Fandango and Jazzberry** (resolves brand-visual#5, brand-owner
+  direction: restrict usage per ground, do not relight the values). Fandango is
+  text only on light grounds (8.18:1 on the light surface, 2.23:1 on Black);
+  Jazzberry is text only on dark grounds (5.39:1 on Black, 3.38:1 on the light
+  surface). Written into `guidelines/accessibility.html` and the co-design skill
+  (`visual-rules.md`, `accessibility.md`, `decks.md`).
+- `scripts/contrast-pairs.json` asserts the rule: each brand colour as text on its
+  own ground, every capability label role on the surface in every context, the
+  white role on a Fandango fill, Black on a Jazzberry fill, and the two
+  "AA text on light tints" tokens (9 pairs to 19).
+
+### Changed (ground rule)
+
+- Dark `--text-label-cobalt` (Monitor) and `--text-label-teal` were the relit
+  light Fandango `--color-cobalt-400` `#A05FC0` (4.36:1 on Black, under AA); they
+  are now `var(--text-secondary)` (10.92:1; corp theme 14.50:1). Light values are
+  unchanged (`--color-cobalt-600`, 8.71:1). No brand value changed.
+- Guideline pages and deck masters that set capability text in the raw palette
+  (`color-capabilities`, `brand-capability-spine`, `diagram-build-lineage`,
+  `decks/shared/{capabilities,content,title}.html`) now use the `--text-label-*`
+  roles for text and keep the raw capability colour for bars and borders. Deck
+  section eyebrows use `--text-label-accent`, so the sales (light) variant no
+  longer renders Jazzberry text on a light ground.
+
+### Known issues (noted, not fixed here)
+
+- `tokens/shadcn.css` is consumed by nothing: react-registry deliberately excludes
+  it and hand-maintains the same oklch values, so edits here do not propagate. Its
+  dark `--chart-1` is Fandango on a dark ground (2.23:1, below the 3:1 non-text
+  minimum).
+- react-registry pins `brand-visual#v1.0.1`; this repo is at 1.2.0 once tagged.
+- Merging the absorbed alpha steps exposes the pre-existing boosted alphas on
+  `--color-cobalt-500-{8,12,15,20}` and `--color-amber-400-{12,15,20}`: the ramps
+  are not monotonic (`-15` is 0.20 but `-18` is 0.18; `-20` is 0.28 but `-25` is
+  0.25; `--color-cobalt-500-8` equals `-10`). Downstream uses alpha = name / 100
+  for all of them.
 
 ### Known discrepancies in the book (documented, not resolved)
 
@@ -126,6 +187,13 @@ pass. Measured on the corrected values (`npm run report:contrast`):
 | Fandango emphasis on surface (light) | 6.80 | 8.18 |
 | light primary button label on Fandango | 6.80 | 8.18 |
 | default border on surface (light, 3:1) | 3.28 | 3.19 |
+| Monitor label on surface (dark; newly asserted) | 4.22 (fail) | 10.92 |
+| Inspect / eyebrow label on surface (dark; newly asserted) | 5.44 | 5.39 |
+| Monitor label on surface (light; newly asserted) | 8.94 | 8.71 |
+| Inspect / eyebrow label on surface (light; newly asserted) | 6.61 | 6.43 |
+
+The only pass/fail change is the dark Monitor (and teal-alias) label, fixed by
+the ground rule's re-pairing, not by changing a brand value.
 
 ## [1.1.1] - 2026-06-12
 

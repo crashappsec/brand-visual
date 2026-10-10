@@ -185,10 +185,14 @@
   --color-red-800: #F44747;
   --color-red-900: #D16969;
   --color-red-deep: #991B1B;
+  --color-yellow-100: #FFFFE0;  /* absorbed from consumer (1.2.0) */
   --color-yellow-200: #FFFFAA;
   --color-yellow-400: #DCDCAA;
+  --color-yellow-500: #D7BA7D;  /* absorbed from consumer (1.2.0) */
   --color-yellow-700: #CE9178;
   --color-yellow-900: #B5854B;
+  --color-orange-100: #FFF2E9;  /* absorbed from consumer (1.2.0) */
+  --color-orange-200: #FFE0C9;  /* absorbed from consumer (1.2.0) */
   --color-orange-600: #CE9178;
 
   /* ── Terminal decoration (macOS traffic lights) ───────────── */
@@ -212,6 +216,11 @@
   --color-code-bg: #0E0F10;
   --color-code-border: rgba(252, 252, 251, 0.10);  /* white role (#FCFCFB) at 10% */
   --color-code-text: hsl(0, 0%, 92%);
+  /* Code-tab labels (absorbed from consumer, 1.2.0). Active was
+     hsl(225, 25%, 100%), i.e. pure white: re-pointed to the white
+     role (no off-book white). Light overrides live in semantic.css. */
+  --color-code-tab-active: var(--color-white);
+  --color-code-tab-inactive: hsl(225, 25%, 70%);
 
   /* ── Dark surfaces: the official Black (--color-co-black) is THE
      surface for every content area. Cards & sections pop via hairline
@@ -221,35 +230,76 @@
   --color-dark-surface-secondary: #2A2E3A;  /* slate — raised cards / inputs / terminals */
   --color-dark-surface-invert: #353B49;     /* hover / selection bg */
   --color-dark-surface-green: #11161F;      /* lab / innovation tint */
+  /* Dark-mode "brand off-white" panels (absorbed from consumer, 1.2.0).
+     Downstream they equal its own dark surface (sidebar, "unified") and
+     its own dark-surface-invert (dropdown bg); expressed here as the same
+     relationships rather than copying its off-book literals. */
+  --color-dark-brand-offwhite1: var(--color-dark-surface);         /* sidebar */
+  --color-dark-brand-offwhite2: var(--color-dark-surface-invert);  /* dropdown bg */
 
   /* ── Brand-colour alpha overlays ──────────────────────────────
      Pattern: --color-{brand}-{base}-{percent×100}. RGB channels are
      the corrected brand bases: lime 179,255,0 · Fandango 82,58,164
      (cobalt*, amber*) · Jazzberry 255,47,142 (magenta*, teal*).
-     Note: the existing cobalt/amber alphas run higher than their
-     names (e.g. -8 is 0.10); kept as authored. ── */
+     Note: the pre-1.2.0 cobalt/amber steps (-8, -12, -15, -20) run
+     higher than their names (e.g. -8 is 0.10); kept as authored. The
+     steps absorbed from the consumer in 1.2.0 (-0, -2, -3, -5, -6, -18,
+     -25, -30, -40, -45, and -8/-10 where new) use alpha = name / 100
+     and the corrected brand base, not the consumer's old bases. ── */
+  --color-neon-400-0: rgba(179, 255, 0, 0.00);
+  --color-neon-400-2: rgba(179, 255, 0, 0.02);
+  --color-neon-400-3: rgba(179, 255, 0, 0.03);
   --color-neon-400-5: rgba(179, 255, 0, 0.05);
+  --color-neon-400-6: rgba(179, 255, 0, 0.06);
   --color-neon-400-8: rgba(179, 255, 0, 0.08);
   --color-neon-400-10: rgba(179, 255, 0, 0.10);
   --color-neon-400-12: rgba(179, 255, 0, 0.12);
   --color-neon-400-15: rgba(179, 255, 0, 0.15);
+  --color-neon-400-18: rgba(179, 255, 0, 0.18);
   --color-neon-400-20: rgba(179, 255, 0, 0.20);
+  --color-neon-400-25: rgba(179, 255, 0, 0.25);
   --color-neon-400-30: rgba(179, 255, 0, 0.30);
+  --color-neon-400-40: rgba(179, 255, 0, 0.40);
 
+  --color-cobalt-500-0: rgba(82, 58, 164, 0.00);
+  --color-cobalt-500-5: rgba(82, 58, 164, 0.05);
+  --color-cobalt-500-6: rgba(82, 58, 164, 0.06);
   --color-cobalt-500-8: rgba(82, 58, 164, 0.10);
+  --color-cobalt-500-10: rgba(82, 58, 164, 0.10);
   --color-cobalt-500-12: rgba(82, 58, 164, 0.16);
   --color-cobalt-500-15: rgba(82, 58, 164, 0.20);
+  --color-cobalt-500-18: rgba(82, 58, 164, 0.18);
   --color-cobalt-500-20: rgba(82, 58, 164, 0.28);
+  --color-cobalt-500-25: rgba(82, 58, 164, 0.25);
+  --color-cobalt-500-30: rgba(82, 58, 164, 0.30);
+  --color-cobalt-500-45: rgba(82, 58, 164, 0.45);
 
+  --color-magenta-400-0: rgba(255, 47, 142, 0.00);
+  --color-magenta-400-3: rgba(255, 47, 142, 0.03);
+  --color-magenta-400-6: rgba(255, 47, 142, 0.06);
+  --color-magenta-400-8: rgba(255, 47, 142, 0.08);
   --color-magenta-400-10: rgba(255, 47, 142, 0.10);
   --color-magenta-400-12: rgba(255, 47, 142, 0.12);
   --color-magenta-400-15: rgba(255, 47, 142, 0.15);
   --color-magenta-400-20: rgba(255, 47, 142, 0.20);
+  --color-magenta-400-25: rgba(255, 47, 142, 0.25);
+  --color-magenta-400-30: rgba(255, 47, 142, 0.30);
+  --color-magenta-400-40: rgba(255, 47, 142, 0.40);
 
+  --color-amber-400-0: rgba(82, 58, 164, 0.00);
+  --color-amber-400-6: rgba(82, 58, 164, 0.06);
+  --color-amber-400-8: rgba(82, 58, 164, 0.08);
+  --color-amber-400-10: rgba(82, 58, 164, 0.10);
   --color-amber-400-12: rgba(82, 58, 164, 0.16);
   --color-amber-400-15: rgba(82, 58, 164, 0.20);
   --color-amber-400-20: rgba(82, 58, 164, 0.28);
+  --color-amber-400-25: rgba(82, 58, 164, 0.25);
+  --color-amber-400-30: rgba(82, 58, 164, 0.30);
 
+  --color-teal-400-0: rgba(255, 47, 142, 0.00);
+  --color-teal-400-5: rgba(255, 47, 142, 0.05);
+  --color-teal-400-8: rgba(255, 47, 142, 0.08);
+  --color-teal-400-10: rgba(255, 47, 142, 0.10);
   --color-teal-400-12: rgba(255, 47, 142, 0.12);
   --color-teal-400-15: rgba(255, 47, 142, 0.15);
 

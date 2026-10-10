@@ -110,10 +110,14 @@ Generated from tokens/colors.css by scripts/build-skill-refs.mjs. Do not edit.
 | `--color-red-800` | #F44747 | #F44747 |  |
 | `--color-red-900` | #D16969 | #D16969 |  |
 | `--color-red-deep` | #991B1B | #991B1B |  |
+| `--color-yellow-100` | #FFFFE0 | #FFFFE0 | absorbed from consumer (1.2.0) |
 | `--color-yellow-200` | #FFFFAA | #FFFFAA |  |
 | `--color-yellow-400` | #DCDCAA | #DCDCAA |  |
+| `--color-yellow-500` | #D7BA7D | #D7BA7D | absorbed from consumer (1.2.0) |
 | `--color-yellow-700` | #CE9178 | #CE9178 |  |
 | `--color-yellow-900` | #B5854B | #B5854B |  |
+| `--color-orange-100` | #FFF2E9 | #FFF2E9 | absorbed from consumer (1.2.0) |
+| `--color-orange-200` | #FFE0C9 | #FFE0C9 | absorbed from consumer (1.2.0) |
 | `--color-orange-600` | #CE9178 | #CE9178 |  |
 | `--color-traffic-red` | #ff5f56 | #ff5f56 |  |
 | `--color-traffic-yellow` | #ffbd2e | #ffbd2e |  |
@@ -127,28 +131,64 @@ Generated from tokens/colors.css by scripts/build-skill-refs.mjs. Do not edit.
 | `--color-code-bg` | #0E0F10 | #0E0F10 |  |
 | `--color-code-border` | rgba(252, 252, 251, 0.10) | rgba(252, 252, 251, 0.10) | white role (#FCFCFB) at 10% |
 | `--color-code-text` | hsl(0, 0%, 92%) | hsl(0, 0%, 92%) |  |
+| `--color-code-tab-active` | var(--color-white) | #FCFCFB |  |
+| `--color-code-tab-inactive` | hsl(225, 25%, 70%) | hsl(225, 25%, 70%) |  |
 | `--color-dark-surface` | var(--color-co-black) | #0B1221 | page + card background (Black) |
 | `--color-dark-surface-secondary` | #2A2E3A | #2A2E3A | slate — raised cards / inputs / terminals |
 | `--color-dark-surface-invert` | #353B49 | #353B49 | hover / selection bg |
 | `--color-dark-surface-green` | #11161F | #11161F | lab / innovation tint |
+| `--color-dark-brand-offwhite1` | var(--color-dark-surface) | #0B1221 | sidebar |
+| `--color-dark-brand-offwhite2` | var(--color-dark-surface-invert) | #353B49 | dropdown bg |
+| `--color-neon-400-0` | rgba(179, 255, 0, 0.00) | rgba(179, 255, 0, 0.00) |  |
+| `--color-neon-400-2` | rgba(179, 255, 0, 0.02) | rgba(179, 255, 0, 0.02) |  |
+| `--color-neon-400-3` | rgba(179, 255, 0, 0.03) | rgba(179, 255, 0, 0.03) |  |
 | `--color-neon-400-5` | rgba(179, 255, 0, 0.05) | rgba(179, 255, 0, 0.05) |  |
+| `--color-neon-400-6` | rgba(179, 255, 0, 0.06) | rgba(179, 255, 0, 0.06) |  |
 | `--color-neon-400-8` | rgba(179, 255, 0, 0.08) | rgba(179, 255, 0, 0.08) |  |
 | `--color-neon-400-10` | rgba(179, 255, 0, 0.10) | rgba(179, 255, 0, 0.10) |  |
 | `--color-neon-400-12` | rgba(179, 255, 0, 0.12) | rgba(179, 255, 0, 0.12) |  |
 | `--color-neon-400-15` | rgba(179, 255, 0, 0.15) | rgba(179, 255, 0, 0.15) |  |
+| `--color-neon-400-18` | rgba(179, 255, 0, 0.18) | rgba(179, 255, 0, 0.18) |  |
 | `--color-neon-400-20` | rgba(179, 255, 0, 0.20) | rgba(179, 255, 0, 0.20) |  |
+| `--color-neon-400-25` | rgba(179, 255, 0, 0.25) | rgba(179, 255, 0, 0.25) |  |
 | `--color-neon-400-30` | rgba(179, 255, 0, 0.30) | rgba(179, 255, 0, 0.30) |  |
+| `--color-neon-400-40` | rgba(179, 255, 0, 0.40) | rgba(179, 255, 0, 0.40) |  |
+| `--color-cobalt-500-0` | rgba(82, 58, 164, 0.00) | rgba(82, 58, 164, 0.00) |  |
+| `--color-cobalt-500-5` | rgba(82, 58, 164, 0.05) | rgba(82, 58, 164, 0.05) |  |
+| `--color-cobalt-500-6` | rgba(82, 58, 164, 0.06) | rgba(82, 58, 164, 0.06) |  |
 | `--color-cobalt-500-8` | rgba(82, 58, 164, 0.10) | rgba(82, 58, 164, 0.10) |  |
+| `--color-cobalt-500-10` | rgba(82, 58, 164, 0.10) | rgba(82, 58, 164, 0.10) |  |
 | `--color-cobalt-500-12` | rgba(82, 58, 164, 0.16) | rgba(82, 58, 164, 0.16) |  |
 | `--color-cobalt-500-15` | rgba(82, 58, 164, 0.20) | rgba(82, 58, 164, 0.20) |  |
+| `--color-cobalt-500-18` | rgba(82, 58, 164, 0.18) | rgba(82, 58, 164, 0.18) |  |
 | `--color-cobalt-500-20` | rgba(82, 58, 164, 0.28) | rgba(82, 58, 164, 0.28) |  |
+| `--color-cobalt-500-25` | rgba(82, 58, 164, 0.25) | rgba(82, 58, 164, 0.25) |  |
+| `--color-cobalt-500-30` | rgba(82, 58, 164, 0.30) | rgba(82, 58, 164, 0.30) |  |
+| `--color-cobalt-500-45` | rgba(82, 58, 164, 0.45) | rgba(82, 58, 164, 0.45) |  |
+| `--color-magenta-400-0` | rgba(255, 47, 142, 0.00) | rgba(255, 47, 142, 0.00) |  |
+| `--color-magenta-400-3` | rgba(255, 47, 142, 0.03) | rgba(255, 47, 142, 0.03) |  |
+| `--color-magenta-400-6` | rgba(255, 47, 142, 0.06) | rgba(255, 47, 142, 0.06) |  |
+| `--color-magenta-400-8` | rgba(255, 47, 142, 0.08) | rgba(255, 47, 142, 0.08) |  |
 | `--color-magenta-400-10` | rgba(255, 47, 142, 0.10) | rgba(255, 47, 142, 0.10) |  |
 | `--color-magenta-400-12` | rgba(255, 47, 142, 0.12) | rgba(255, 47, 142, 0.12) |  |
 | `--color-magenta-400-15` | rgba(255, 47, 142, 0.15) | rgba(255, 47, 142, 0.15) |  |
 | `--color-magenta-400-20` | rgba(255, 47, 142, 0.20) | rgba(255, 47, 142, 0.20) |  |
+| `--color-magenta-400-25` | rgba(255, 47, 142, 0.25) | rgba(255, 47, 142, 0.25) |  |
+| `--color-magenta-400-30` | rgba(255, 47, 142, 0.30) | rgba(255, 47, 142, 0.30) |  |
+| `--color-magenta-400-40` | rgba(255, 47, 142, 0.40) | rgba(255, 47, 142, 0.40) |  |
+| `--color-amber-400-0` | rgba(82, 58, 164, 0.00) | rgba(82, 58, 164, 0.00) |  |
+| `--color-amber-400-6` | rgba(82, 58, 164, 0.06) | rgba(82, 58, 164, 0.06) |  |
+| `--color-amber-400-8` | rgba(82, 58, 164, 0.08) | rgba(82, 58, 164, 0.08) |  |
+| `--color-amber-400-10` | rgba(82, 58, 164, 0.10) | rgba(82, 58, 164, 0.10) |  |
 | `--color-amber-400-12` | rgba(82, 58, 164, 0.16) | rgba(82, 58, 164, 0.16) |  |
 | `--color-amber-400-15` | rgba(82, 58, 164, 0.20) | rgba(82, 58, 164, 0.20) |  |
 | `--color-amber-400-20` | rgba(82, 58, 164, 0.28) | rgba(82, 58, 164, 0.28) |  |
+| `--color-amber-400-25` | rgba(82, 58, 164, 0.25) | rgba(82, 58, 164, 0.25) |  |
+| `--color-amber-400-30` | rgba(82, 58, 164, 0.30) | rgba(82, 58, 164, 0.30) |  |
+| `--color-teal-400-0` | rgba(255, 47, 142, 0.00) | rgba(255, 47, 142, 0.00) |  |
+| `--color-teal-400-5` | rgba(255, 47, 142, 0.05) | rgba(255, 47, 142, 0.05) |  |
+| `--color-teal-400-8` | rgba(255, 47, 142, 0.08) | rgba(255, 47, 142, 0.08) |  |
+| `--color-teal-400-10` | rgba(255, 47, 142, 0.10) | rgba(255, 47, 142, 0.10) |  |
 | `--color-teal-400-12` | rgba(255, 47, 142, 0.12) | rgba(255, 47, 142, 0.12) |  |
 | `--color-teal-400-15` | rgba(255, 47, 142, 0.15) | rgba(255, 47, 142, 0.15) |  |
 | `--color-white-8` | rgba(252, 252, 251, 0.08) | rgba(252, 252, 251, 0.08) | white role (#FCFCFB) at 8% |
