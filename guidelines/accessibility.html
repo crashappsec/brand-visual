@@ -1,4 +1,4 @@
-<!-- @dsCard group="Accessibility" viewport="700x580" name="WCAG 2.2 AA Conformance" subtitle="Contrast requirements, AA-passing role pairs, and CI enforcement" -->
+<!-- @dsCard group="Accessibility" viewport="700x580" name="WCAG 2.2 AA Conformance" subtitle="Contrast requirements, the Fandango/Jazzberry ground rule, AA-passing role pairs, and CI enforcement" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -187,6 +187,73 @@
       light mode. This is why the light-theme primary button uses Fandango, not lime.
     </p>
     <p class="note">Ratios computed by <code>scripts/check-contrast.mjs</code> logic against current tokens; CI re-verifies the governed pairs on every PR.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section">
+    <div class="section-title">Ground rule: Fandango and Jazzberry</div>
+    <p class="note">
+      <b>Fandango is a light-ground text colour. Jazzberry is a dark-ground text colour.</b>
+      Neither is text on the wrong ground. On the wrong ground each is a non-text colour
+      only: fills, bars, borders, chart marks, and decoration. The brand values are not
+      lightened or darkened to pass; usage is restricted per ground instead
+      (brand-owner decision, resolves brand-visual#5).
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Colour</th>
+          <th>On Black #0B1221</th>
+          <th>On light surface #FCFCFB</th>
+          <th>On Thunder #E6E2DC</th>
+          <th>Use as text</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="chip" style="background:var(--color-fandango)"></span>Fandango #523AA4</td>
+          <td class="fail">2.23:1</td>
+          <td class="pass">8.18:1</td>
+          <td class="pass">6.51:1</td>
+          <td>light grounds only</td>
+        </tr>
+        <tr>
+          <td><span class="chip" style="background:var(--color-jazzberry)"></span>Jazzberry #FF2F8E</td>
+          <td class="pass">5.39:1</td>
+          <td class="fail">3.38:1</td>
+          <td class="fail">2.69:1</td>
+          <td>dark grounds only</td>
+        </tr>
+        <tr>
+          <td><span class="chip" style="background:var(--color-atomic-lime)"></span>Atomic lime #B3FF00</td>
+          <td class="pass">15.34:1</td>
+          <td class="fail">1.19:1</td>
+          <td class="fail">1.06:1</td>
+          <td>dark grounds only</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">
+      <b>Text on brand fills:</b> the white role (#FCFCFB) on a Fandango fill is 8.18:1;
+      Black on a Jazzberry fill is 5.39:1. Do not put the white role on Jazzberry (3.38:1)
+      or Black on Fandango (2.23:1).
+    </p>
+    <p class="note">
+      <b>Non-text on the wrong ground:</b> Jazzberry on the light surface clears the 3:1
+      non-text minimum (SC 1.4.11) at 3.38:1, so it can carry an icon or a component
+      boundary there. Fandango on Black (2.23:1) and Jazzberry on Thunder (2.69:1) do not:
+      use them as fills or decoration, never as the only cue that identifies a control.
+    </p>
+    <p class="note">
+      <b>In the tokens:</b> the capability label roles already follow the rule. On dark,
+      <code>--text-label-cobalt</code> (Monitor) and <code>--text-label-teal</code> are
+      neutral text (<code>--text-secondary</code>); the capability colour moves to the
+      card bar or border. On light they are Fandango-family. <code>--text-label-magenta</code>
+      and <code>--text-label-accent</code> are Jazzberry on dark. CI asserts every label
+      role and both brand colours on their own ground
+      (<code>scripts/contrast-pairs.json</code>). Ratios from <code>npm run report:contrast</code>.
+    </p>
   </div>
 
   <hr class="divider" />

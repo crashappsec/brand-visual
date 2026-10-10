@@ -63,6 +63,9 @@ roles. Nothing in a deck introduces a new color, font, or size.
 - **Accent discipline.** One accent per deck (the variant's): Atomic lime on
   dark, Fandango on light. The capability colors (Monitor/Inspect/Tag/Track) are
   for capability content, not general highlighting.
+- **Ground rule.** Fandango is text only on light grounds and Jazzberry only on
+  dark grounds (see `visual-rules.md`). Capability text uses the
+  `--text-label-*` roles; the raw capability color goes on bars and borders.
 
 ## Accessibility (required, not optional)
 

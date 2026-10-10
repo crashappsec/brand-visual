@@ -12,12 +12,12 @@ Generated from tokens/semantic.css by scripts/build-skill-refs.mjs. Do not edit.
 | `--text-disabled` | hsl(225, 25%, 35%) | hsl(225, 25%, 35%) |  |
 | `--text-placeholder` | hsl(225, 25%, 55%) | hsl(225, 25%, 55%) |  |
 | `--text-error` | var(--color-red-800) | #F44747 |  |
-| `--text-label-accent` | var(--color-magenta-500) | #FF2F8E | default section eyebrow |
-| `--text-label-cobalt` | var(--color-cobalt-400) | #A05FC0 | Monitor |
-| `--text-label-magenta` | var(--color-magenta-500) | #FF2F8E | Inspect |
+| `--text-label-accent` | var(--color-magenta-500) | #FF2F8E | default section eyebrow: Jazzberry on dark |
+| `--text-label-cobalt` | var(--text-secondary) | hsl(225, 25%, 80%) | Monitor: neutral on dark (ground rule) |
+| `--text-label-magenta` | var(--color-magenta-500) | #FF2F8E | Inspect: Jazzberry on dark |
 | `--text-label-amber` | var(--color-neon-300) | #CFFF66 | Tag → light lime |
 | `--text-label-neon` | var(--color-neon-400) | #B3FF00 | Track |
-| `--text-label-teal` | var(--color-cobalt-400) | #A05FC0 | → Fandango |
+| `--text-label-teal` | var(--text-secondary) | hsl(225, 25%, 80%) | → Fandango alias: neutral on dark (ground rule) |
 | `--text-label-green-terminal` | var(--color-neon-400) | #B3FF00 |  |
 | `--text-label-yellow` | var(--color-yellow-700) | #CE9178 |  |
 | `--surface-primary` | var(--color-dark-surface) | #0B1221 | THE content surface |
@@ -30,12 +30,19 @@ Generated from tokens/semantic.css by scripts/build-skill-refs.mjs. Do not edit.
 | `--surface-magenta` | var(--color-magenta-500) | #FF2F8E |  |
 | `--surface-error` | var(--color-red-200) | #FFE0C9 |  |
 | `--surface-success` | var(--color-neon-200) | #E3FF99 |  |
+| `--surface-grey` | var(--color-grey-600) | #565259 |  |
+| `--surface-brand-offwhite1` | var(--color-dark-brand-offwhite1) | #0B1221 | sidebar |
+| `--surface-brand-offwhite2` | var(--color-dark-brand-offwhite2) | #353B49 | dropdown bg |
+| `--surface-yellow` | var(--color-yellow-400) | #DCDCAA |  |
+| `--surface-warning` | var(--color-yellow-200) | #FFFFAA |  |
 | `--border-default1` | hsl(225, 25%, 35%) | hsl(225, 25%, 35%) |  |
 | `--border-default2` | var(--color-grey-300) | #A39E99 |  |
 | `--border-grey` | var(--color-grey-600) | #565259 |  |
 | `--border-negative` | var(--color-red-800) | #F44747 |  |
 | `--border-warning` | var(--color-yellow-700) | #CE9178 |  |
 | `--border-positive` | var(--color-neon-600) | #8FCC00 |  |
+| `--border-disabled1` | hsl(225, 25%, 35%) | hsl(225, 25%, 35%) | absorbed from consumer (1.2.0) |
+| `--border-disabled2` | var(--color-grey-600) | #565259 | absorbed from consumer (1.2.0) |
 | `--border-hairline` | var(--color-white-8) | rgba(252, 252, 251, 0.08) |  |
 | `--btn-primary-bg` | var(--color-neon-400) | #B3FF00 |  |
 | `--btn-primary-border` | var(--color-neon-400) | #B3FF00 |  |
@@ -76,9 +83,16 @@ Generated from tokens/semantic.css by scripts/build-skill-refs.mjs. Do not edit.
 | `--surface-invert` | var(--color-thunder-tint-6) | #F0EEEB | was #EFEFEF |
 | `--surface-disabled` | #E5E5E5 | #E5E5E5 |  |
 | `--surface-card` | var(--color-thunder-tint-10) | #FCFCFB | was #FFFFFF |
+| `--surface-grey` | #9D9D9D | #9D9D9D |  |
+| `--surface-brand-offwhite1` | var(--color-thunder) | #E6E2DC |  |
+| `--surface-brand-offwhite2` | var(--color-thunder) | #E6E2DC |  |
+| `--surface-yellow` | var(--color-yellow-400) | #DCDCAA |  |
+| `--surface-warning` | #FEF3C7 | #FEF3C7 |  |
 | `--border-default1` | #E5E5E5 | #E5E5E5 |  |
 | `--border-default2` | #8E8E8E | #8E8E8E |  |
 | `--border-grey` | #CCCCCC | #CCCCCC |  |
+| `--border-disabled1` | #E5E5E5 | #E5E5E5 |  |
+| `--border-disabled2` | #CCCCCC | #CCCCCC |  |
 | `--border-hairline` | rgba(0, 0, 0, 0.08) | rgba(0, 0, 0, 0.08) |  |
 | `--btn-primary-bg` | var(--color-cobalt-500) | #523AA4 |  |
 | `--btn-primary-border` | var(--color-cobalt-500) | #523AA4 |  |
@@ -90,6 +104,8 @@ Generated from tokens/semantic.css by scripts/build-skill-refs.mjs. Do not edit.
 | `--color-code-bg` | var(--color-thunder-tint-9) | #F9F8F7 | was hsl(120, 14%, 97%) |
 | `--color-code-border` | hsl(120, 10%, 88%) | hsl(120, 10%, 88%) |  |
 | `--color-code-text` | hsl(140, 10%, 16%) | hsl(140, 10%, 16%) |  |
+| `--color-code-tab-active` | hsl(225, 25%, 12%) | hsl(225, 25%, 12%) |  |
+| `--color-code-tab-inactive` | hsl(225, 25%, 40%) | hsl(225, 25%, 40%) |  |
 | `--color-syntax-keyword` | var(--color-magenta-700) | #B01E5A |  |
 | `--color-syntax-string` | hsl(210, 60%, 35%) | hsl(210, 60%, 35%) |  |
 | `--color-syntax-function` | hsl(220, 50%, 40%) | hsl(220, 50%, 40%) |  |

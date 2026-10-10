@@ -20,13 +20,22 @@
   --text-placeholder: hsl(225, 25%, 55%);
   --text-error: var(--color-red-800);
 
-  /* ── Capability + label accents (auto-flip to AA in light) ── */
-  --text-label-accent: var(--color-magenta-500);       /* default section eyebrow */
-  --text-label-cobalt: var(--color-cobalt-400);        /* Monitor */
-  --text-label-magenta: var(--color-magenta-500);      /* Inspect */
+  /* ── Capability + label accents (auto-flip to AA in light) ──
+     GROUND RULE (1.2.0, resolves brand-visual#5): Fandango is a
+     light-ground text colour (8.18:1 on the light surface, 2.23:1 on
+     Black); Jazzberry is a dark-ground text colour (5.39:1 on Black,
+     3.38:1 on the light surface). Usage is restricted per ground; the
+     brand values are not relit. So on dark the Fandango-family labels
+     (Monitor, teal alias) are neutral text, and Fandango marks the
+     capability through non-text accents (bars, borders, fills). The
+     previous dark value, light fandango --color-cobalt-400 #A05FC0, was
+     a relit Fandango at 4.36:1: under AA. See guidelines/accessibility.html. */
+  --text-label-accent: var(--color-magenta-500);       /* default section eyebrow: Jazzberry on dark */
+  --text-label-cobalt: var(--text-secondary);          /* Monitor: neutral on dark (ground rule) */
+  --text-label-magenta: var(--color-magenta-500);      /* Inspect: Jazzberry on dark */
   --text-label-amber: var(--color-neon-300);           /* Tag → light lime */
   --text-label-neon: var(--color-neon-400);            /* Track */
-  --text-label-teal: var(--color-cobalt-400);          /* → Fandango */
+  --text-label-teal: var(--text-secondary);            /* → Fandango alias: neutral on dark (ground rule) */
   --text-label-green-terminal: var(--color-neon-400);
   --text-label-yellow: var(--color-yellow-700);
 
@@ -41,6 +50,12 @@
   --surface-magenta: var(--color-magenta-500);
   --surface-error: var(--color-red-200);
   --surface-success: var(--color-neon-200);
+  /* Absorbed from the consuming site (1.2.0) */
+  --surface-grey: var(--color-grey-600);
+  --surface-brand-offwhite1: var(--color-dark-brand-offwhite1);  /* sidebar */
+  --surface-brand-offwhite2: var(--color-dark-brand-offwhite2);  /* dropdown bg */
+  --surface-yellow: var(--color-yellow-400);
+  --surface-warning: var(--color-yellow-200);
 
   /* ── Borders — cool, low-contrast hairlines ───────────────── */
   --border-default1: hsl(225, 25%, 35%);
@@ -49,6 +64,8 @@
   --border-negative: var(--color-red-800);
   --border-warning: var(--color-yellow-700);
   --border-positive: var(--color-neon-600);
+  --border-disabled1: hsl(225, 25%, 35%);  /* absorbed from consumer (1.2.0) */
+  --border-disabled2: var(--color-grey-600);  /* absorbed from consumer (1.2.0) */
   /* Hairline — the palette default divider. Low-contrast by design:
      cards & sections separate via structure, not bg colour. */
   --border-hairline: var(--color-white-8);
@@ -107,10 +124,21 @@
   --surface-invert: var(--color-thunder-tint-6);      /* was #EFEFEF */
   --surface-disabled: #E5E5E5;
   --surface-card: var(--color-thunder-tint-10);       /* was #FFFFFF */
+  /* Absorbed from the consuming site (1.2.0). The brand-offwhite pair
+     was #F7F7F7 / #EFEFEF downstream; it means the brand off-white, so
+     it is Thunder (decision 2026-10-10). --surface-warning #FEF3C7 is
+     taken as shipped downstream: no book basis (Tailwind amber-100). */
+  --surface-grey: #9D9D9D;
+  --surface-brand-offwhite1: var(--color-thunder);
+  --surface-brand-offwhite2: var(--color-thunder);
+  --surface-yellow: var(--color-yellow-400);
+  --surface-warning: #FEF3C7;
 
   --border-default1: #E5E5E5;
   --border-default2: #8E8E8E;
   --border-grey: #CCCCCC;
+  --border-disabled1: #E5E5E5;
+  --border-disabled2: #CCCCCC;
   --border-hairline: rgba(0, 0, 0, 0.08);
 
   --btn-primary-bg: var(--color-cobalt-500);
@@ -124,6 +152,8 @@
   --color-code-bg: var(--color-thunder-tint-9);  /* was hsl(120, 14%, 97%) */
   --color-code-border: hsl(120, 10%, 88%);
   --color-code-text: hsl(140, 10%, 16%);
+  --color-code-tab-active: hsl(225, 25%, 12%);
+  --color-code-tab-inactive: hsl(225, 25%, 40%);
   --color-syntax-keyword: var(--color-magenta-700);
   --color-syntax-string: hsl(210, 60%, 35%);
   --color-syntax-function: hsl(220, 50%, 40%);

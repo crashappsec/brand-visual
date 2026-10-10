@@ -36,6 +36,33 @@ backgrounds. Use the tints, ramps, and alpha overlays in `tokens-colors.md`
 rather than hand-mixing. Prefer semantic roles (`tokens-semantic.md`) over raw
 palette values when you are styling text, surfaces, borders, or buttons.
 
+## Ground rule: Fandango and Jazzberry
+
+Fandango is a light-ground text color; Jazzberry is a dark-ground text color.
+Neither is text on the wrong ground. The brand values are never lightened or
+darkened to pass contrast; usage is restricted per ground instead.
+
+| color | on Black `#0B1221` | on light surface `#FCFCFB` | text use |
+| --- | --- | --- | --- |
+| Fandango `#523AA4` | 2.23:1 (fail) | 8.18:1 | light grounds only |
+| Jazzberry `#FF2F8E` | 5.39:1 | 3.38:1 (fail) | dark grounds only |
+| Atomic lime `#B3FF00` | 15.34:1 | 1.19:1 (fail) | dark grounds only |
+
+- On the wrong ground, use the color only as a fill, bar, border, chart mark, or
+  decoration. Jazzberry on the light surface still clears the 3:1 non-text
+  minimum; Fandango on Black (2.23:1) does not, so it must never be the only cue
+  that identifies a control on dark.
+- Text on fills: the white role `#FCFCFB` on Fandango (8.18:1); Black on
+  Jazzberry (5.39:1). Never the white role on Jazzberry (3.38:1).
+- For capability labels use the semantic roles (`--text-label-cobalt`,
+  `--text-label-magenta`, `--text-label-amber`, `--text-label-neon`,
+  `--text-label-accent`), never the raw palette. They already resolve to a
+  ground-appropriate color: on dark, the Monitor label is neutral text and
+  Fandango moves to the card bar or border.
+
+Ratios are measured by `npm run report:contrast` in the brand repo, and CI
+asserts each brand color on its own ground.
+
 ## Typography roles
 
 Three brand fonts, each with a fixed role. Pull exact stacks, sizes, and weights
