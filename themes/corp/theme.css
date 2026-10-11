@@ -33,9 +33,9 @@
    the deferred dark-ramp cleanup tokenizes those literals.
 
    Role                  semantic.css literal    corp reference            Impact
-   --btn-primary-text    #0B0F19                 var(--color-co-black)     #161616; contrast on Atomic lime preserved well above AA
-   --btn-enterprise-text #FFFFFF                 var(--color-white)        #F7F6F5; near-white; contrast on Fandango unaffected at this delta
+   --btn-primary-text    #0B0F19                 var(--color-co-black)     #0B1221; contrast on Atomic lime preserved well above AA
    --border-default1     hsl(225, 25%, 35%)      var(--color-grey-700)     #3A3E4E; nearest navy-tinted grey in core scale; hairline weight unchanged
+   --border-disabled1    hsl(225, 25%, 35%)      var(--color-grey-700)     #3A3E4E; same normalization as --border-default1
 */
 
 :root {
@@ -63,6 +63,13 @@
   /* Status surfaces */
   --surface-error: var(--color-red-200);
   --surface-success: var(--color-neon-200);
+  --surface-warning: var(--color-yellow-200);
+  --surface-yellow: var(--color-yellow-400);
+
+  /* Neutral and brand off-white panels (absorbed 1.2.0) */
+  --surface-grey: var(--color-grey-600);
+  --surface-brand-offwhite1: var(--color-dark-brand-offwhite1);  /* sidebar */
+  --surface-brand-offwhite2: var(--color-dark-brand-offwhite2);  /* dropdown bg */
 
   /* ── Text hierarchy ─────────────────────────────────────────── */
   --text-primary: var(--color-white);
@@ -74,13 +81,15 @@
   --text-placeholder: var(--color-grey-400);
   --text-error: var(--color-red-800);
 
-  /* Capability label accents */
-  --text-label-accent: var(--color-magenta-500);  /* default eyebrow */
-  --text-label-cobalt: var(--color-cobalt-400);   /* Monitor */
-  --text-label-magenta: var(--color-magenta-500); /* Inspect */
+  /* Capability label accents. Ground rule (guidelines/accessibility.html):
+     Jazzberry is dark-ground text; Fandango is light-ground text, so on
+     this dark theme the Fandango-family labels are neutral text. */
+  --text-label-accent: var(--color-magenta-500);  /* default eyebrow: Jazzberry on dark */
+  --text-label-cobalt: var(--text-secondary);     /* Monitor: neutral on dark */
+  --text-label-magenta: var(--color-magenta-500); /* Inspect: Jazzberry on dark */
   --text-label-neon: var(--color-neon-400);       /* Track */
   --text-label-amber: var(--color-neon-300);
-  --text-label-teal: var(--color-cobalt-400);
+  --text-label-teal: var(--text-secondary);       /* Fandango alias: neutral on dark */
   --text-label-green-terminal: var(--color-neon-400);
   --text-label-yellow: var(--color-yellow-700);
 
@@ -92,6 +101,8 @@
   --border-negative: var(--color-red-800);
   --border-warning: var(--color-yellow-700);
   --border-positive: var(--color-neon-600);
+  --border-disabled1: var(--color-grey-700);      /* see normalization notes */
+  --border-disabled2: var(--color-grey-600);
 
   /* ── Buttons ────────────────────────────────────────────────── */
   /* Primary -- Atomic lime fill, Black label */

@@ -1,5 +1,5 @@
 {
-  "comment": "Role-pair contrast manifest. min 4.5 rows = WCAG 2.2 SC 1.4.3 AA normal text. min 3.0 rows = large text (SC 1.4.3) or non-text / UI component contrast (SC 1.4.11). Role names are the exact semantic roles defined in tokens/semantic.css. An optional `contexts` array restricts a pair to the contexts where the two roles actually co-occur (a context name matches if it starts with one of the listed prefixes, e.g. \"core dark\"). Two deviations from the bootstrap plan are documented inline below; see commit message and the Task 9 report.",
+  "comment": "Role-pair contrast manifest. min 4.5 rows = WCAG 2.2 SC 1.4.3 AA normal text. min 3.0 rows = large text (SC 1.4.3) or non-text / UI component contrast (SC 1.4.11). Role names are the exact semantic roles defined in tokens/semantic.css. An optional `contexts` array restricts a pair to the contexts where the two roles actually co-occur (a context name matches if it starts with one of the listed prefixes, e.g. \"core dark\"). Two deviations from the bootstrap plan are documented inline below; see commit message and the Task 9 report. Since 1.2.0 the manifest also asserts the Fandango/Jazzberry ground rule (brand-visual#5): each brand colour is asserted as text only on its own ground, and the capability label roles must clear AA in every context.",
   "pairs": [
     {
       "name": "primary text on surface",
@@ -34,7 +34,7 @@
         "core dark",
         "theme:"
       ],
-      "note": "Deviation from plan: scoped to dark contexts. --surface-invert is the hover/selection background, and --text-invert is light text intended for that raised dark surface (8.7:1 in dark). In light mode --surface-invert is a near-white hover fill (#EFEFEF) and --text-invert is near-white (#F5F5F5); the two roles do not co-occur as fg/bg there, so an unscoped check would assert a pairing the system never renders."
+      "note": "Deviation from plan: scoped to dark contexts. --surface-invert is the hover/selection background, and --text-invert is light text intended for that raised dark surface (8.7:1 in dark). In light mode --surface-invert is a near-white hover fill (Thunder tint-6 #F0EEEB, was #EFEFEF) and --text-invert is the white role (Thunder tint-10 #FCFCFB, was #F5F5F5); the two roles are not intended to co-occur as fg/bg there, so an unscoped check would assert a pairing the system does not intend. Exception to watch: a consumer that does render them together gets about 1.1:1."
     },
     {
       "name": "error text on surface",
@@ -67,6 +67,90 @@
         "theme:"
       ],
       "note": "Deviation from plan: targets --border-default2 (the visible structural default border) rather than --border-default1, which tokens/semantic.css documents as a deliberately sub-threshold hairline; SC 1.4.11 governs borders required to identify a component, which is --border-default2. Governed in core dark, core light, and themes. The light-mode token was #9D9D9D (2.71:1, under the 3:1 floor); fixed to #8E8E8E (3.28:1) and governed here since."
+    },
+    {
+      "name": "Fandango text on light surface (ground rule)",
+      "foreground": "--color-fandango",
+      "background": "--surface-primary",
+      "min": 4.5,
+      "contexts": [
+        "core light"
+      ],
+      "note": "Ground rule (1.2.0, brand-visual#5): Fandango is light-ground text, Jazzberry is dark-ground text; usage is restricted per ground rather than relighting the brand values. See guidelines/accessibility.html. Fandango on the dark surface is 2.23:1 and is deliberately not asserted: it is a non-text/fill colour there."
+    },
+    {
+      "name": "Jazzberry text on dark surface (ground rule)",
+      "foreground": "--color-jazzberry",
+      "background": "--surface-primary",
+      "min": 4.5,
+      "contexts": [
+        "core dark",
+        "theme:"
+      ],
+      "note": "Ground rule (1.2.0, brand-visual#5): Fandango is light-ground text, Jazzberry is dark-ground text; usage is restricted per ground rather than relighting the brand values. See guidelines/accessibility.html. Jazzberry on the light surface is 3.38:1 and is deliberately not asserted: it is a non-text colour there."
+    },
+    {
+      "name": "section eyebrow label on surface",
+      "foreground": "--text-label-accent",
+      "background": "--surface-primary",
+      "min": 4.5,
+      "note": "Label roles carry the ground rule: each must resolve to a ground-appropriate colour in every context."
+    },
+    {
+      "name": "Monitor (Fandango) label on surface",
+      "foreground": "--text-label-cobalt",
+      "background": "--surface-primary",
+      "min": 4.5,
+      "note": "Ground rule (1.2.0, brand-visual#5): Fandango is light-ground text, Jazzberry is dark-ground text; usage is restricted per ground rather than relighting the brand values. See guidelines/accessibility.html. Neutral text on dark (was relit Fandango #A05FC0 at 4.36:1); Fandango-family on light."
+    },
+    {
+      "name": "Inspect (Jazzberry) label on surface",
+      "foreground": "--text-label-magenta",
+      "background": "--surface-primary",
+      "min": 4.5
+    },
+    {
+      "name": "teal-alias label on surface",
+      "foreground": "--text-label-teal",
+      "background": "--surface-primary",
+      "min": 4.5,
+      "note": "Deprecated teal alias follows the Monitor label pairing."
+    },
+    {
+      "name": "enterprise button label on Fandango fill",
+      "foreground": "--btn-enterprise-text",
+      "background": "--btn-enterprise-bg",
+      "min": 4.5
+    },
+    {
+      "name": "Black text on Jazzberry fill (ground rule)",
+      "foreground": "--color-co-black",
+      "background": "--color-jazzberry",
+      "min": 4.5,
+      "contexts": [
+        "core dark"
+      ],
+      "note": "Ground rule (1.2.0, brand-visual#5): Fandango is light-ground text, Jazzberry is dark-ground text; usage is restricted per ground rather than relighting the brand values. See guidelines/accessibility.html. Text on a Jazzberry fill is Black; the white role on Jazzberry is 3.38:1."
+    },
+    {
+      "name": "fandango-700 text on fandango-100 tint",
+      "foreground": "--color-fandango-700",
+      "background": "--color-fandango-100",
+      "min": 4.5,
+      "contexts": [
+        "core light"
+      ],
+      "note": "Makes the 'AA text on light tints' token comment an asserted fact."
+    },
+    {
+      "name": "jazzberry-700 text on jazzberry-100 tint",
+      "foreground": "--color-jazzberry-700",
+      "background": "--color-jazzberry-100",
+      "min": 4.5,
+      "contexts": [
+        "core light"
+      ],
+      "note": "Makes the 'AA text on magenta-100' token comment an asserted fact."
     }
   ]
 }

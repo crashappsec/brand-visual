@@ -73,7 +73,7 @@ The sales variant does **not** set surface or text roles. Light surfaces come
 from the brand's existing `[data-theme="light"]` mapping, which
 `check-contrast.mjs` already verifies for WCAG 2.2 AA in its "core light"
 context. The variant only selects an approved accent: Atomic lime is illegible
-on white (1.7:1), so the action/accent role moves to Fandango, using
+on the light surface (1.19:1), so the action/accent role moves to Fandango, using
 `--color-fandango-700` (`#5A2173`, asserted "AA text on light tints") for text
 and focus. This keeps the variant additive-free and avoids shipping an unchecked
 surface/text pairing.

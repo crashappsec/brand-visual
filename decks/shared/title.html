@@ -19,10 +19,11 @@
   h1 { font-family: var(--font-title); font-size: 64px; color: var(--text-primary); margin: 0 0 16px; letter-spacing: -0.03em; position: relative; }
   h1 .accent { color: var(--color-neon-400); }
   .sub { font-family: var(--font-body); font-size: 22px; color: var(--text-secondary); margin: 0 0 40px; position: relative; }
-  .sub .cap-m { color: var(--color-cobalt-400); font-weight: 600; }
-  .sub .cap-i { color: var(--color-magenta-500); font-weight: 600; }
-  .sub .cap-t { color: var(--color-neon-300); font-weight: 600; }
-  .sub .cap-k { color: var(--color-neon-400); font-weight: 600; }
+  /* Capability words use the semantic label roles (ground rule: no Fandango text on dark) */
+  .sub .cap-m { color: var(--text-label-cobalt); font-weight: 600; }
+  .sub .cap-i { color: var(--text-label-magenta); font-weight: 600; }
+  .sub .cap-t { color: var(--text-label-amber); font-weight: 600; }
+  .sub .cap-k { color: var(--text-label-neon); font-weight: 600; }
   .agenda { font-family: var(--font-mono); font-size: 15px; color: var(--text-tertiary); line-height: 1.7; position: relative; max-width: 720px; }
   .meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-tertiary); margin-top: 28px; position: relative; }
 </style>

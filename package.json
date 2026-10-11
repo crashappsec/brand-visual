@@ -1,6 +1,6 @@
 {
   "name": "@crashoverride/brand-tokens",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Crash Override visual brand tokens, themes, and fonts (canonical)",
   "type": "module",
   "license": "SEE LICENSE IN LICENSE",
@@ -8,7 +8,8 @@
     "tokens",
     "themes",
     "fonts",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "exports": {
     "./tokens/*.css": "./tokens/*.css",
@@ -20,6 +21,7 @@
     "check:tokens": "node scripts/check-token-integrity.mjs",
     "check:contract": "node scripts/check-brand-contract.mjs",
     "check:contrast": "node scripts/check-contrast.mjs",
+    "report:contrast": "node scripts/check-contrast.mjs --report",
     "check": "npm run check:tokens && npm run check:contract && npm run check:contrast"
   },
   "repository": {

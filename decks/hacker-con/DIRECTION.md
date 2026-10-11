@@ -19,7 +19,7 @@ brand, not the everyday corporate look.
 
 - `assets/illustrations/crt-tv.svg` and `assets/illustrations/crt-tv-dark.svg`
   are the visual seed: a CRT television, on-brand, already in the asset set.
-- Atomic lime (`#B3FF00`) reads as phosphor green on Black (`#161616`) and is the
+- Atomic lime (`#B3FF00`) reads as phosphor green on Black (`#0B1221`) and is the
   natural primary glow color. Jazzberry and Fandango are the natural secondary
   neons for a multi-color CRT look.
 - JetBrains Mono / Geist Mono carry the terminal feel without leaving the brand

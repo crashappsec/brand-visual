@@ -16,6 +16,7 @@
 // A theme variant that fails AA fails CI exactly like a rogue hex would.
 //
 // Run:  node scripts/check-contrast.mjs
+//       node scripts/check-contrast.mjs --report     (also print every ratio)
 //       node scripts/check-contrast.mjs --self-test
 
 import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
@@ -185,7 +186,7 @@ function pairAppliesTo(pair, contextName) {
   return pair.contexts.some((prefix) => contextName.startsWith(prefix));
 }
 
-function checkContext(contextName, context, pairs, failures) {
+function checkContext(contextName, context, pairs, failures, report) {
   for (const pair of pairs) {
     if (!pairAppliesTo(pair, contextName)) continue;
     let fgLiteral, bgLiteral, fgSrgb, bgSrgb, ratio;
@@ -204,6 +205,17 @@ function checkContext(contextName, context, pairs, failures) {
     }
 
     const rounded = Math.round(ratio * 100) / 100;
+    if (report) {
+      report.push({
+        context: contextName,
+        name: pair.name,
+        fg: fgLiteral,
+        bg: bgLiteral,
+        ratio: rounded.toFixed(2),
+        min: pair.min,
+        pass: ratio + 1e-9 >= pair.min,
+      });
+    }
     if (ratio + 1e-9 < pair.min) {
       const kind = pair.uiComponent
         ? " (UI component, SC 1.4.11)"
@@ -264,7 +276,22 @@ function main() {
   }
 
   const failures = [];
-  for (const [name, ctx] of contexts) checkContext(name, ctx, pairs, failures);
+  const report = process.argv.includes("--report") ? [] : null;
+  for (const [name, ctx] of contexts) checkContext(name, ctx, pairs, failures, report);
+
+  // --report: print every governed ratio (pass and fail) as a markdown table,
+  // so measured values can be quoted in docs and PRs without hand-computing.
+  if (report) {
+    console.log("| context | pair | fg | bg | ratio | min | result |");
+    console.log("| --- | --- | --- | --- | --- | --- | --- |");
+    for (const r of report) {
+      console.log(
+        `| ${r.context} | ${r.name} | ${r.fg} | ${r.bg} | ${r.ratio}:1 | ` +
+          `${r.min}:1 | ${r.pass ? "pass" : "FAIL"} |`
+      );
+    }
+    console.log("");
+  }
 
   if (failures.length > 0) {
     console.error("Contrast check FAILED:");

@@ -40,7 +40,7 @@ roles. Nothing in a deck introduces a new color, font, or size.
    - Conference: render on the default (dark) theme.
    - Sales: set `data-theme="light"` on the deck root so surfaces and text use
      the brand's AA-verified light mapping, then the sales remap moves the accent
-     to Fandango (Atomic lime is illegible on white).
+     to Fandango (Atomic lime is illegible on light surfaces).
 
 ## Slide-construction rules
 
@@ -52,7 +52,7 @@ roles. Nothing in a deck introduces a new color, font, or size.
 - **Type.** JetBrains Mono (`--font-title`) for titles and eyebrows, Inter
   (`--font-body`) for body, Geist Mono (`--font-mono`) for code, labels, and
   data. Exact stacks and sizes are in `tokens-typography.md`.
-- **Surfaces and shape.** Black `#161616` is the content surface on dark; cards
+- **Surfaces and shape.** Black `#0B1221` is the content surface on dark; cards
   separate with hairline borders, not a lighter lift. Rounding is sharp (4px,
   `--radius-md`). See `visual-rules.md` and `tokens-spacing.md`.
 - **Logos.** Use the wordmark that contrasts with the surface: `logo-white.svg`
@@ -63,6 +63,9 @@ roles. Nothing in a deck introduces a new color, font, or size.
 - **Accent discipline.** One accent per deck (the variant's): Atomic lime on
   dark, Fandango on light. The capability colors (Monitor/Inspect/Tag/Track) are
   for capability content, not general highlighting.
+- **Ground rule.** Fandango is text only on light grounds and Jazzberry only on
+  dark grounds (see `visual-rules.md`). Capability text uses the
+  `--text-label-*` roles; the raw capability color goes on bars and borders.
 
 ## Accessibility (required, not optional)
 

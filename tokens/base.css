@@ -79,7 +79,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ── Accent underline for headline emphasis ─────────────────── */
 .co-accent-underline {
-  color: #FFFFFF;
+  color: var(--color-white);
   text-decoration: underline;
   text-decoration-color: var(--color-neon-400);
   text-underline-offset: 8px;

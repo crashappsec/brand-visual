@@ -1,5 +1,12 @@
 # `crash-override-design` zip audit (2026-06)
 
+> **Superseded in part (2026-10, v1.2.0).** This record treats Black `#161616`
+> as canonical and `#0B1221` as a legacy value. That is reversed: Brand book v1
+> (PDF) is canon and its Black is `#0B1221`, so the zip's value was the book's
+> (crashappsec/digital-marketing#2286). The logo vectors in section 4 still fill
+> at `#161616`; that artwork is unchanged pending a brand decision. See
+> `CHANGELOG.md` 1.2.0. The rest of this record stands as written.
+
 Phase 5 of the brand-visual rollout (spec section 2 decision 5, section 8 phase 5)
 begins by locating and auditing the old downloadable `crash-override-design`
 skill zip, then merging only its genuinely unique, on-brand visual assets into
