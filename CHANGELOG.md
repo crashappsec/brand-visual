@@ -6,7 +6,7 @@ here. Versions match the git tags consumers pin to
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow
 [Semantic Versioning](https://semver.org/).
 
-## [1.2.0] - Unreleased
+## [1.2.0] - 2026-10-11
 
 Brand book v1 (PDF, produced by BBB) is canon. When this repo and the book
 disagree, the book wins and this repo is corrected. Decision by the brand owner
