@@ -60,9 +60,23 @@ roles. Nothing in a deck introduces a new color, font, or size.
   lockups live in `assets/logos/` in the brand repo. Never re-typeset the
   wordmark; it is custom art. See `visual-rules.md` for clear-space and the
   guideline `guidelines/brand-logos.html`.
-- **Accent discipline.** One accent per deck (the variant's): Atomic lime on
-  dark, Fandango on light. The capability colors (Monitor/Inspect/Tag/Track) are
-  for capability content, not general highlighting.
+- **Accent discipline (brand-owner decision, 2026-11-09).** Accents are
+  accents. Most of every slide is neutral (surface, text, and border roles), with
+  about one accent moment per slide. Each accent has one job:
+  - **Signal: the variant's accent** (Atomic lime on dark, Fandango on light).
+    Use it for the takeaway, the good path in a diagram, the key number, the
+    `>>` line, and the call to action. It is never decoration: card bars, list
+    bullets, table headers, and section labels stay neutral
+    (`--text-secondary`, `--border-hairline`).
+  - **Alarm: Jazzberry** (dark grounds only). Use it only for the thing that is
+    wrong: the threat, the violation, the held or banned item, or the pain phrase
+    in a customer quote. It is never a category or identity colour, and most
+    slides have none.
+  - **No use-case colour coding.** Prevent, Respond, and Prove are told apart by
+    label and order, never by giving each its own colour. A title prefix such as
+    "Prevent:" uses `--text-secondary`, not an accent.
+  - **Fandango on dark** is limited to small system labels (for example a sensor
+    chip), if it is used at all.
 - **Ground rule.** Fandango is text only on light grounds and Jazzberry only on
   dark grounds (see `visual-rules.md`). Capability text uses the
   `--text-label-*` roles; the raw capability color goes on bars and borders.
