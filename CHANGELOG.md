@@ -6,6 +6,22 @@ here. Versions match the git tags consumers pin to
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+
+- **`favicon.svg` was the Vite default favicon** (a purple lightning bolt), not a
+  Crash Override mark. Replaced with the book's favicon: the white Ø on Black
+  (`#0B1221`). Added `favicon-light.svg`, the book's second version (black Ø on
+  white).
+- **Logo files still carried the off-book black `#161616`.** Brand book v1 shows
+  the logo in pure black on light grounds and pure white on dark ones (logo usage
+  and favicon pages). `logo-black`, `iconlogo-black` and `icon-color` ink is now
+  `#000000`; the `icon-black-bg` square is now brand Black `#0B1221`. The PNGs
+  for those four were regenerated from the SVGs at their original sizes; the
+  shapes are unchanged. White variants already matched the book and are
+  untouched.
+
 ## [1.2.0] - Unreleased
 
 Brand book v1 (PDF, produced by BBB) is canon. When this repo and the book

@@ -100,6 +100,7 @@ before placing a logo. Available marks include the full wordmark
 (`logo-black.png`, `logo-white.png`), the icon in several treatments
 (`icon-color`, `icon-white`, `icon-black-bg` as svg and png), the combined
 icon-plus-wordmark lockups (`iconlogo-black.png`, `iconlogo-white.png`), and
-`favicon.svg`. Pick the mark whose contrast suits the background, and follow the
+the book's two favicons (`favicon.svg`, white Ø on Black; `favicon-light.svg`,
+black Ø on white). Pick the mark whose contrast suits the background, and follow the
 guideline for spacing and sizing. The wordmark CRASH OVERRIDE is custom art, not
 a webfont; never re-typeset it.
