@@ -66,6 +66,15 @@ until consumers are re-wired (crashappsec/digital-marketing#2286 step 3).
   Near-white surfaces map to the nearest book Thunder tint by luminance. Greys
   used for text, borders, and disabled states are not whites and are unchanged.
 
+- **Accent roles (brand-owner decision, 2026-11-09).** The co-design skill's
+  `visual-rules.md` and `decks.md` now define one job per accent: the variant
+  accent (Atomic lime on dark, Fandango on light) is the signal for the
+  takeaway, good path, key number, or call to action; Jazzberry is the alarm,
+  used only for what is wrong; and no accent is assigned per use case or
+  section (Prevent, Respond, and Prove are told apart by label and order). This
+  replaces the old "capability colours" note in `decks.md`. Docs only; no token
+  values change.
+
 ### Added
 
 - The book's tint ramps, ten steps per colour (50 tokens):

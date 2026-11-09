@@ -63,6 +63,20 @@ darkened to pass contrast; usage is restricted per ground instead.
 Ratios are measured by `npm run report:contrast` in the brand repo, and CI
 asserts each brand color on its own ground.
 
+## Accent roles
+
+The palette has three accents, and each has one job. Keep most of any surface
+neutral and spend accents sparingly:
+
+- **Signal:** Atomic lime on dark (Fandango on light) marks the takeaway, the
+  good path, the key number, or the call to action. It is not decoration.
+- **Alarm:** Jazzberry (dark grounds only) marks only what is wrong: the threat,
+  the violation, the held or banned thing. It is never a category colour.
+- **No category colour coding:** don't assign an accent per use case, product
+  area, or section. Tell them apart with labels and order.
+
+`decks.md` applies these roles to slides.
+
 ## Typography roles
 
 Three brand fonts, each with a fixed role. Pull exact stacks, sizes, and weights
